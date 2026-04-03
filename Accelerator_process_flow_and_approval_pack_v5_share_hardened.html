@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accelerator process and approval pack</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stone-50:#fafaf9;--stone-100:#f5f5f4;--stone-200:#e7e5e4;--stone-300:#d6d3d1;--stone-400:#a8a29e;--stone-500:#78716c;--stone-600:#57534e;--stone-700:#44403c;--stone-800:#292524;--stone-900:#1c1917;
+  --green-50:#f0fdf4;--green-500:#22c55e;--green-700:#15803d;--green-800:#166534;
+  --teal-50:#f0fdfa;--teal-500:#14b8a6;--teal-700:#0f766e;--teal-800:#115e59;
+  --amber-50:#fffbeb;--amber-500:#f59e0b;--amber-700:#b45309;--amber-800:#92400e;
+  --violet-50:#f5f3ff;--violet-500:#8b5cf6;--violet-700:#6d28d9;--violet-800:#5b21b6;
+  --rose-50:#fff1f2;--rose-500:#f43f5e;--rose-700:#be123c;--rose-800:#9f1239;
+  --blue-50:#eff6ff;--blue-500:#3b82f6;--blue-700:#1d4ed8;--blue-800:#1e40af;
+  --coral-50:#fff7ed;--coral-500:#f97316;--coral-700:#c2410c;
+  --bg:var(--stone-50);--fg:var(--stone-800);--muted:var(--stone-500);--card:#ffffff;--border:var(--stone-200);
+  --font-display:'Fraunces',serif;--font-body:'DM Sans',sans-serif;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#141210;--fg:#e7e5e4;--muted:#a8a29e;--card:#1e1c1a;--border:#3a3734;
+  --green-50:#0a2014;--green-700:#4ade80;--green-800:#86efac;
+  --teal-50:#0a1f1c;--teal-700:#5eead4;--teal-800:#99f6e4;
+  --amber-50:#1f1806;--amber-500:#fbbf24;--amber-700:#fbbf24;--amber-800:#fcd34d;
+  --violet-50:#1a1528;--violet-700:#a78bfa;--violet-800:#c4b5fd;
+  --rose-50:#200d10;--rose-700:#fb7185;--rose-800:#fda4af;
+  --blue-50:#0f172a;--blue-700:#60a5fa;--blue-800:#93c5fd;
+  --coral-50:#1c1108;--coral-700:#fb923c;
+  --stone-200:#3a3734;--stone-300:#57534e;
+}}
+@media(prefers-color-scheme:dark){
+  .nav{background:rgba(20,18,16,.9)}
+  .nav button.proposal-tab{background:rgba(59,130,246,.12);border-color:rgba(96,165,250,.24);color:var(--blue-700)}
+  .nav button.proposal-tab:hover,.nav button.proposal-tab.on{background:rgba(59,130,246,.18);border-color:rgba(96,165,250,.34);color:var(--blue-800)}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--fg);padding:2rem 1.5rem}
+.hdr{max-width:1280px;margin:0 auto 1.25rem;display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap}
+.hdr h1{font-family:var(--font-display);font-weight:600;font-size:1.6rem;letter-spacing:-.02em}
+.hdr .sub{font-size:.82rem;color:var(--muted);max-width:720px;line-height:1.5}
+.nav{max-width:1280px;margin:0 auto 1.5rem;display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:.65rem;z-index:1000;padding:.55rem .65rem;border:1px solid var(--border);border-radius:14px;background:rgba(250,250,249,.9);backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.05)}
+.nav button{font-family:var(--font-body);font-size:.78rem;font-weight:500;padding:6px 16px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .15s}
+.nav button:hover{background:var(--card);color:var(--fg)}
+.nav button.on{background:var(--card);color:var(--fg);border-color:var(--stone-300);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.nav button.proposal-tab{background:var(--blue-50);border-color:rgba(59,130,246,.22);color:var(--blue-700);font-weight:600}
+.nav button.proposal-tab:hover{background:#ffffff;color:var(--blue-800);border-color:rgba(59,130,246,.34)}
+.nav button.proposal-tab.on{background:#ffffff;color:var(--blue-800);border-color:rgba(59,130,246,.34);box-shadow:0 1px 3px rgba(59,130,246,.12)}
+.nav button.exec-tab{order:-2}
+.nav button.pack-tab{order:-1}
+.pnl{display:none;max-width:1280px;margin:0 auto}
+.pnl.on{display:block}
+.pnl-desc{font-size:.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.55;max-width:900px}
+svg text{font-family:var(--font-body)}
+.lbl{font-size:13px;font-weight:500;fill:var(--fg)}
+.sub2{font-size:10.5px;font-weight:400;fill:var(--muted);line-height:1.4}
+.phase-lbl{font-size:10px;font-weight:600;fill:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.arr-line{stroke:var(--stone-300);stroke-width:1.2}
+.arr-line-d{stroke:var(--stone-300);stroke-width:1.2;stroke-dasharray:5 3}
+.arr-eq{stroke:var(--blue-500);stroke-width:1.2;opacity:.7}
+.arr-eq-d{stroke:var(--blue-500);stroke-width:1.2;stroke-dasharray:5 3;opacity:.55}
+.arr-ft{stroke:var(--coral-500);stroke-width:1.2;opacity:.7}
+.arr-ft-d{stroke:var(--coral-500);stroke-width:1.2;stroke-dasharray:5 3;opacity:.55}
+.diamond-stroke{fill:var(--card);stroke:var(--coral-700);stroke-width:1.2}
+.key-object rect{stroke-width:1.5;fill:var(--card);stroke:var(--stone-500)}
+.n-built rect{fill:var(--green-50);stroke:var(--green-700);stroke-width:.7}
+.n-built .lbl{fill:var(--green-800)}
+.n-analysed rect{fill:var(--teal-50);stroke:var(--teal-700);stroke-width:.7}
+.n-analysed .lbl{fill:var(--teal-800)}
+.n-refine rect{fill:var(--amber-50);stroke:var(--amber-700);stroke-width:.7}
+.n-refine .lbl{fill:var(--amber-800)}
+.n-tobuild rect{fill:var(--violet-50);stroke:var(--violet-700);stroke-width:.7}
+.n-tobuild .lbl{fill:var(--violet-800)}
+.n-later rect{fill:var(--card);stroke:var(--border);stroke-width:.7;stroke-dasharray:5 3}
+.n-later .lbl{fill:var(--muted);opacity:.55}
+.n-neutral rect{fill:var(--card);stroke:var(--border);stroke-width:.7}
+.n-rose rect{fill:var(--rose-50);stroke:var(--rose-700);stroke-width:.7}
+.n-rose .lbl{fill:var(--rose-800)}
+.n-blue rect{fill:var(--blue-50);stroke:var(--blue-700);stroke-width:.7}
+.n-blue .lbl{fill:var(--blue-800)}
+.branch-box{fill:none;stroke-width:.7;stroke-dasharray:8 4;rx:14}
+.note-box{fill:var(--amber-50);stroke:var(--amber-500);stroke-width:.5;stroke-dasharray:4 3;rx:5}
+.later-bar{margin-top:1.25rem;padding:.75rem 1.25rem;background:var(--card);border:1px dashed var(--border);border-radius:10px;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;font-size:.78rem;color:var(--muted);opacity:.6}
+.legend-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:inline-flex;flex-wrap:wrap;gap:2rem}
+.legend-section h3{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.78rem}
+.legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+
+/* === Equity Track interactive reference layer === */
+.eq-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:20px;align-items:start}
+.eq-flow-wrap{min-width:0}
+.eq-sidepanel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem 1rem 1.1rem;position:sticky;top:5.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.eq-sidepanel h3{font-family:var(--font-display);font-weight:600;font-size:1.05rem;line-height:1.25;margin-bottom:.35rem}
+.eq-sidepanel .meta{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
+.eq-sidepanel .lead{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:.9rem}
+.eq-sidepanel dl{display:grid;grid-template-columns:1fr;gap:.7rem}
+.eq-sidepanel dt{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.18rem}
+.eq-sidepanel dd{font-size:.82rem;line-height:1.5;color:var(--fg)}
+.eq-sidepanel .hint{margin-top:.95rem;padding-top:.8rem;border-top:1px dashed var(--border);font-size:.76rem;color:var(--muted)}
+.eq-sidepanel .step-list{margin-top:.6rem;font-size:.78rem;color:var(--muted);line-height:1.5}
+.eq-sidepanel .step-list span{display:block}
+.eq-hotspot{fill:transparent;cursor:pointer;pointer-events:all}
+.eq-hotspot:hover,.eq-hotspot.active{fill:rgba(59,130,246,.08)}
+@media (max-width: 1180px){
+  .eq-layout{grid-template-columns:1fr}
+  .eq-sidepanel{position:static}
+}
+
+
+
+/* === Proposal document panels === */
+.doc-page{max-width:1280px;margin:0 auto}
+.doc-hero{background:linear-gradient(180deg,var(--card),rgba(255,255,255,0));border:1px solid var(--border);border-radius:18px;padding:1.35rem 1.45rem 1.2rem;margin-bottom:1rem}
+.doc-kicker{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.45rem}
+.doc-hero h2{font-family:var(--font-display);font-weight:600;font-size:1.5rem;letter-spacing:-.02em;line-height:1.15;margin-bottom:.4rem}
+.doc-hero .subline{font-size:.9rem;color:var(--muted);line-height:1.6;max-width:920px}
+.doc-grid{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px;align-items:start}
+.doc-sidebar{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem;position:sticky;top:6.35rem}
+.doc-sidebar h3{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.7rem}
+.doc-sidebar a{display:block;text-decoration:none;color:var(--fg);font-size:.82rem;line-height:1.45;padding:.42rem .55rem;border-radius:10px;transition:all .15s}
+.doc-sidebar a:hover{color:var(--blue-700);background:var(--blue-50)}
+.doc-sidebar a.active{color:var(--blue-800);background:var(--blue-50);border:1px solid rgba(59,130,246,.22);font-weight:600}
+.doc-section{scroll-margin-top:7.7rem;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.2rem 1.25rem;margin-bottom:1rem}
+.doc-main{min-width:0}
+
+.doc-section h3{font-family:var(--font-display);font-weight:600;font-size:1.15rem;letter-spacing:-.01em;margin-bottom:.7rem}
+.doc-section h4{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:1rem 0 .5rem}
+.doc-section p{font-size:.88rem;line-height:1.65;color:var(--fg);margin-bottom:.8rem}
+.doc-section ul{margin:0 0 .8rem 1.15rem}
+.doc-section li{font-size:.88rem;line-height:1.6;margin-bottom:.34rem}
+.doc-callout{background:var(--blue-50);border:1px solid var(--blue-700);border-radius:12px;padding:.9rem 1rem}
+.doc-callout p:last-child{margin-bottom:0}
+.doc-band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:.4rem 0 .9rem}
+.doc-pill{background:var(--stone-100);border:1px solid var(--border);border-radius:999px;padding:.34rem .72rem;font-size:.76rem;color:var(--muted);display:inline-block}
+.doc-metric-grid,.doc-workstream-grid,.doc-phase-grid,.doc-deliverable-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.doc-card{border:1px solid var(--border);border-radius:12px;padding:.9rem .95rem;background:linear-gradient(180deg,var(--card),var(--stone-50))}
+.doc-card h5{font-size:.84rem;font-weight:600;margin-bottom:.35rem}
+.doc-card p{font-size:.82rem;color:var(--muted);margin-bottom:0}
+.doc-tablelike{display:grid;grid-template-columns:220px 1fr;gap:10px 14px}
+.doc-tablelike div{padding:.15rem 0}
+.doc-key{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.doc-value{font-size:.86rem;line-height:1.55}
+.doc-divider{height:1px;background:var(--border);margin:.9rem 0}
+.doc-note{font-size:.8rem;color:var(--muted);line-height:1.55}
+.doc-ref{display:flex;flex-wrap:wrap;gap:8px;margin-top:.4rem}
+@media (max-width: 980px){
+  .doc-grid{grid-template-columns:1fr}
+  .doc-sidebar{position:static}
+  .doc-band,.doc-metric-grid,.doc-workstream-grid,.doc-phase-grid,.doc-deliverable-grid{grid-template-columns:1fr}
+  .doc-tablelike{grid-template-columns:1fr}
+}
+
+
+
+/* Casual anti-copy layer: deters quick copy/paste, not determined extraction */
+html, body, .pnl, .doc-page, .doc-main, .doc-sidebar, .eq-sidepanel, .ft-sidepanel, .ov-sidepanel, .md-sidepanel, .legend-card, svg text {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}
+button, a, .nav, .doc-sidebar a, .eq-hotspot, .ft-hotspot, .ov-hotspot, .md-hotspot {
+  -webkit-user-select:none;
+  user-select:none;
+}
+img, svg {
+  -webkit-user-drag:none;
+  user-drag:none;
+}
+.protect-toast{
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:2000;
+  background:var(--stone-800);
+  color:#fff;
+  border-radius:10px;
+  padding:.7rem .9rem;
+  font-size:.78rem;
+  line-height:1.35;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(8px);
+  transition:opacity .2s ease, transform .2s ease;
+}
+.protect-toast.on{
+  opacity:.96;
+  transform:translateY(0);
+}
+@media(prefers-color-scheme:dark){
+  .protect-toast{background:#f5f5f4;color:#1c1917}
+}
+
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>Accelerator process</h1>
+  <span class="sub">Standalone process design. Every core step has an explicit connector, return loops are visible, and cross-track transitions are shown with dashed lines.</span>
+</div>
+<div class="nav">
+  <button onclick="go(0)">Full overview</button>
+  <button class="on" onclick="go(1)">Equity Track detail</button>
+  <button onclick="go(2)">Mentoring delivery</button>
+  <button onclick="go(3)">Fast Track detail</button>
+  <button onclick="go(4)">Legend</button>
+  <button class="proposal-tab exec-tab" onclick="go(5)">Executive proposal</button>
+  <button class="proposal-tab pack-tab" onclick="go(6)">Approval pack</button>
+</div>
+
+<!-- ===================== PANEL 0: FULL OVERVIEW (scaled, spacious) ===================== -->
+<div id="p0" class="pnl">
+<div class="eq-layout">
+  <div class="eq-flow-wrap">
+<svg width="100%" viewBox="0 0 1380 960" style="max-height:85vh">
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M2 1.5L8 5L2 8.5" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="ahB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M2 1.5L8 5L2 8.5" fill="none" stroke="var(--blue-500)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="ahF" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M2 1.5L8 5L2 8.5" fill="none" stroke="var(--coral-500)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text class="phase-lbl" x="590" y="24">Phase A — Input collection</text>
+<g class="n-built"><rect x="410" y="34" width="260" height="56" rx="7"/></g>
+<text class="lbl" x="434" y="54">1. Self-assessment</text>
+<text class="sub2" x="434" y="72">Scores, structured inputs, comments</text>
+<g class="n-built"><rect x="710" y="34" width="260" height="56" rx="7"/></g>
+<text class="lbl" x="734" y="54">2. First 1:1 session</text>
+<text class="sub2" x="734" y="72">Reviewer observations, context</text>
+<line x1="540" y1="90" x2="540" y2="108" class="arr-line"/>
+<line x1="840" y1="90" x2="840" y2="108" class="arr-line"/>
+<line x1="540" y1="108" x2="840" y2="108" class="arr-line"/>
+<line x1="690" y1="108" x2="690" y2="128" class="arr-line" marker-end="url(#ah)"/>
+<polygon points="690,132 758,168 690,204 622,168" class="diamond-stroke"/>
+<text class="lbl" x="690" y="162" text-anchor="middle" style="font-size:12px">3. Path</text>
+<text class="sub2" x="690" y="178" text-anchor="middle">Equity vs Fast Track</text>
+<line x1="622" y1="168" x2="330" y2="168" class="arr-eq"/>
+<line x1="330" y1="168" x2="330" y2="248" class="arr-eq" marker-end="url(#ahB)"/>
+<text class="lbl" x="430" y="160" style="fill:var(--blue-700);font-size:12px">Equity Track</text>
+<line x1="758" y1="168" x2="1050" y2="168" class="arr-ft"/>
+<line x1="1050" y1="168" x2="1050" y2="248" class="arr-ft" marker-end="url(#ahF)"/>
+<text class="lbl" x="850" y="160" style="fill:var(--coral-700);font-size:12px">Fast Track</text>
+<rect x="40" y="248" width="580" height="650" class="branch-box" style="stroke:var(--blue-500);opacity:.35"/>
+<text class="phase-lbl" x="64" y="274" style="fill:var(--blue-700)">Equity Track — mentoring path</text>
+<g class="n-refine"><rect x="64" y="290" width="240" height="52" rx="6"/></g>
+<text class="lbl" x="82" y="310">4. Scored need signal</text>
+<text class="sub2" x="82" y="330">Primary/secondary, urgency</text>
+<g class="n-tobuild"><rect x="324" y="290" width="240" height="52" rx="6"/></g>
+<text class="lbl" x="342" y="310">5. Context + reviewer</text>
+<text class="sub2" x="342" y="330">Founder narrative, themes</text>
+<line x1="184" y1="342" x2="184" y2="360" class="arr-eq"/>
+<line x1="444" y1="342" x2="444" y2="360" class="arr-eq"/>
+<line x1="184" y1="360" x2="444" y2="360" class="arr-eq"/>
+<line x1="314" y1="360" x2="314" y2="380" class="arr-eq" marker-end="url(#ahB)"/>
+<polygon points="314,382 360,410 314,438 268,410" class="diamond-stroke" style="stroke:var(--blue-700)"/>
+<text class="sub2" x="314" y="408" text-anchor="middle">6. Agree?</text>
+<line x1="360" y1="410" x2="490" y2="410" class="arr-eq" marker-end="url(#ahB)"/>
+<text class="sub2" x="390" y="402" style="fill:var(--blue-700)">Conflict</text>
+<g class="n-tobuild"><rect x="490" y="390" width="100" height="42" rx="5"/></g>
+<text class="sub2" x="504" y="410">7. Conflict</text>
+<text class="sub2" x="504" y="426">resolution</text>
+<path d="M540 432 L540 450 L322 450" fill="none" class="arr-eq-d" marker-end="url(#ahB)"/>
+<text class="sub2" x="420" y="446" style="fill:var(--blue-700);font-size:9px">Return</text>
+<line x1="314" y1="438" x2="314" y2="468" class="arr-eq" marker-end="url(#ahB)"/>
+<text class="sub2" x="274" y="454" style="fill:var(--blue-700)">Agree</text>
+<g class="key-object n-tobuild"><rect x="110" y="470" width="410" height="56" rx="6" stroke-width="1.5"/></g>
+<text class="lbl" x="134" y="492">8. Demand profile + package</text>
+<text class="sub2" x="134" y="512">Standardised, one per startup</text>
+<line x1="315" y1="526" x2="315" y2="548" class="arr-eq" marker-end="url(#ahB)"/>
+<g class="n-analysed"><rect x="64" y="550" width="200" height="48" rx="6"/></g>
+<text class="lbl" x="82" y="572">9. Mentor database</text>
+<text class="sub2" x="82" y="590">Raw supply pool</text>
+<g class="key-object n-refine"><rect x="284" y="550" width="220" height="48" rx="6" stroke-width="1.5"/></g>
+<text class="lbl" x="302" y="572">10. Mentor supply profile</text>
+<text class="sub2" x="302" y="590">Standardised format</text>
+<line x1="164" y1="598" x2="164" y2="616" class="arr-eq"/>
+<line x1="394" y1="598" x2="394" y2="616" class="arr-eq"/>
+<line x1="164" y1="616" x2="394" y2="616" class="arr-eq"/>
+<line x1="279" y1="616" x2="279" y2="638" class="arr-eq" marker-end="url(#ahB)"/>
+<g class="key-object n-tobuild"><rect x="154" y="640" width="250" height="50" rx="6" stroke-width="1.5"/></g>
+<text class="lbl" x="176" y="662">11. Ranked shortlist</text>
+<text class="sub2" x="176" y="680">Fit-first, budget + rules</text>
+<line x1="279" y1="690" x2="279" y2="714" class="arr-eq" marker-end="url(#ahB)"/>
+<g class="n-tobuild"><rect x="120" y="716" width="320" height="60" rx="6"/></g>
+<text class="lbl" x="142" y="738">12. Assign / review / gap</text>
+<text class="sub2" x="142" y="756">Strong → Assign · Medium → Review</text>
+<text class="sub2" x="142" y="770">Weak → Gap handling</text>
+<line x1="280" y1="776" x2="280" y2="800" class="arr-eq" marker-end="url(#ahB)"/>
+<rect x="100" y="802" width="360" height="56" rx="6" fill="none" stroke="var(--blue-500)" stroke-width=".7" stroke-dasharray="5 3"/>
+<text class="sub2" x="280" y="822" text-anchor="middle" style="fill:var(--blue-700);font-weight:500">13–18. Mentoring delivery →</text>
+<text class="sub2" x="280" y="842" text-anchor="middle" style="fill:var(--blue-700)">Mandate → sessions → fit check → gate → close</text>
+<rect x="680" y="248" width="640" height="650" class="branch-box" style="stroke:var(--coral-500);opacity:.35"/>
+<text class="phase-lbl" x="704" y="274" style="fill:var(--coral-700)">Fast Track — investor readiness path</text>
+<g class="n-refine"><rect x="720" y="290" width="340" height="54" rx="6"/></g>
+<text class="lbl" x="742" y="312">F1. Readiness pre-check</text>
+<text class="sub2" x="742" y="332">Stage-based matrix, self-assessment, 1:1</text>
+<line x1="890" y1="344" x2="890" y2="370" class="arr-ft" marker-end="url(#ahF)"/>
+<polygon points="890,372 958,412 890,452 822,412" class="diamond-stroke"/>
+<text class="sub2" x="890" y="406" text-anchor="middle">F2. Readiness</text>
+<text class="sub2" x="890" y="422" text-anchor="middle">decision</text>
+<line x1="822" y1="412" x2="700" y2="412" class="arr-ft"/>
+<line x1="700" y1="412" x2="700" y2="476" class="arr-ft" marker-end="url(#ahF)"/>
+<text class="sub2" x="736" y="404" style="fill:var(--green-700);font-weight:500">Fit</text>
+<g class="n-built" style="opacity:.9"><rect x="630" y="478" width="140" height="48" rx="5"/></g>
+<text class="sub2" x="646" y="498" style="fill:var(--green-800)">F3. Fit — ready</text>
+<text class="sub2" x="646" y="516">Data room → artifacts</text>
+<line x1="700" y1="526" x2="700" y2="550" class="arr-ft" marker-end="url(#ahF)"/>
+<g class="n-tobuild"><rect x="630" y="552" width="140" height="44" rx="4"/></g>
+<text class="sub2" x="646" y="572">Collect data room</text>
+<text class="sub2" x="646" y="588">→ Verify → Pack</text>
+<line x1="890" y1="452" x2="890" y2="476" class="arr-ft" marker-end="url(#ahF)"/>
+<text class="sub2" x="910" y="466" style="fill:var(--amber-700);font-weight:500">Conditional</text>
+<g class="n-refine"><rect x="820" y="478" width="140" height="48" rx="5"/></g>
+<text class="sub2" x="834" y="498" style="fill:var(--amber-800)">F4. Missing items</text>
+<line x1="890" y1="526" x2="890" y2="540" class="arr-ft"/>
+<line x1="852" y1="540" x2="928" y2="540" class="arr-ft"/>
+<line x1="852" y1="540" x2="852" y2="562" class="arr-ft" marker-end="url(#ahF)"/>
+<line x1="928" y1="540" x2="928" y2="562" class="arr-ft" marker-end="url(#ahF)"/>
+<g class="n-tobuild"><rect x="806" y="564" width="92" height="50" rx="4"/></g>
+<text class="sub2" x="814" y="584">F5a. Startup</text>
+<text class="sub2" x="814" y="600">delivers</text>
+<g class="n-tobuild"><rect x="902" y="564" width="92" height="50" rx="4"/></g>
+<text class="sub2" x="910" y="584">F5b. Paid</text>
+<text class="sub2" x="910" y="600">support</text>
+<line x1="852" y1="614" x2="852" y2="632" class="arr-ft"/>
+<line x1="948" y1="614" x2="948" y2="632" class="arr-ft"/>
+<line x1="852" y1="632" x2="948" y2="632" class="arr-ft"/>
+<line x1="900" y1="632" x2="900" y2="654" class="arr-ft" marker-end="url(#ahF)"/>
+<g class="n-tobuild"><rect x="842" y="656" width="116" height="42" rx="4"/></g>
+<text class="sub2" x="854" y="680">F6. Recheck</text>
+<path d="M842 678 L772 678 L772 652 L742 652" fill="none" class="arr-ft-d" marker-end="url(#ahF)"/>
+<text class="sub2" x="776" y="670" style="font-size:8px;fill:var(--green-700)">If OK → Fit</text>
+<line x1="958" y1="412" x2="1120" y2="412" class="arr-ft"/>
+<line x1="1120" y1="412" x2="1120" y2="476" class="arr-ft" marker-end="url(#ahF)"/>
+<text class="sub2" x="1030" y="404" style="fill:var(--rose-700);font-weight:500">Does not fit</text>
+<g class="n-rose"><rect x="1060" y="478" width="120" height="48" rx="5"/></g>
+<text class="sub2" x="1074" y="498" style="fill:var(--rose-800)">F7. No fit</text>
+<line x1="1120" y1="526" x2="1120" y2="542" class="arr-ft"/>
+<line x1="1070" y1="542" x2="1170" y2="542" class="arr-ft"/>
+<line x1="1070" y1="542" x2="1070" y2="566" class="arr-ft" marker-end="url(#ahF)"/>
+<line x1="1120" y1="542" x2="1120" y2="566" class="arr-ft" marker-end="url(#ahF)"/>
+<line x1="1170" y1="542" x2="1170" y2="566" class="arr-ft" marker-end="url(#ahF)"/>
+<g class="n-blue"><rect x="1030" y="568" width="80" height="44" rx="4"/></g>
+<text class="sub2" x="1044" y="590" style="fill:var(--blue-800);font-size:10px">→ Equity</text>
+<g class="n-neutral"><rect x="1114" y="568" width="60" height="44" rx="4"/></g>
+<text class="sub2" x="1124" y="590" style="font-size:10px">Wait</text>
+<g class="n-rose"><rect x="1178" y="568" width="52" height="44" rx="4"/></g>
+<text class="sub2" x="1188" y="590" style="fill:var(--rose-800);font-size:10px">Drop</text>
+<path d="M1070 612 L1070 640 L44 640 L44 292 L68 292" fill="none" class="arr-line-d" marker-end="url(#ah)"/>
+<text class="sub2" x="60" y="660" style="font-size:8px;fill:var(--muted)">Return to Equity Track diagnosis</text>
+<g id="ov-hotspots">
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-01" x="410" y="34" width="260" height="56" rx="7"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-02" x="710" y="34" width="260" height="56" rx="7"/>
+  <polygon class="eq-hotspot ov-hotspot" data-step="ov-03" points="690,132 758,168 690,204 622,168"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-04" x="64" y="290" width="240" height="52" rx="6"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-05" x="324" y="290" width="240" height="52" rx="6"/>
+  <polygon class="eq-hotspot ov-hotspot" data-step="ov-eq-06" points="314,382 360,410 314,438 268,410"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-07" x="490" y="390" width="100" height="42" rx="5"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-08" x="110" y="470" width="410" height="56" rx="6"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-09" x="64" y="550" width="200" height="48" rx="6"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-10" x="284" y="550" width="220" height="48" rx="6"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-11" x="154" y="640" width="250" height="50" rx="6"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-12" x="120" y="716" width="320" height="60" rx="6"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-eq-13" x="100" y="802" width="360" height="56" rx="6"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-01" x="720" y="290" width="340" height="54" rx="6"/>
+  <polygon class="eq-hotspot ov-hotspot" data-step="ov-ft-02" points="890,372 958,412 890,452 822,412"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-03" x="630" y="478" width="140" height="48" rx="5"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-collect" x="630" y="552" width="140" height="44" rx="4"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-04" x="820" y="478" width="140" height="48" rx="5"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-05a" x="806" y="564" width="92" height="50" rx="4"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-05b" x="902" y="564" width="92" height="50" rx="4"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-06" x="842" y="656" width="116" height="42" rx="4"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-07" x="1060" y="478" width="120" height="48" rx="5"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-equity" x="1030" y="568" width="80" height="44" rx="4"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-wait" x="1114" y="568" width="60" height="44" rx="4"/>
+  <rect class="eq-hotspot ov-hotspot" data-step="ov-ft-drop" x="1178" y="568" width="52" height="44" rx="4"/>
+</g>
+</svg>
+<div class="later-bar"><span>Later phases</span><span>Mentoring admin</span><span>Graduation report</span></div>
+  </div>
+  <aside class="eq-sidepanel" id="ov-panel" aria-live="polite">
+    <div class="meta" id="ov-panel-meta">FULL OVERVIEW</div>
+    <h3 id="ov-panel-title">Overview reference</h3>
+    <p class="lead" id="ov-panel-lead">Click a main box or decision diamond in the Full overview tab to see a short explanation of its role in the operating model.</p>
+    <dl>
+      <div>
+        <dt>Purpose</dt>
+        <dd id="ov-panel-purpose">This tab summarizes the end-to-end operating model from shared intake to the two main downstream paths.</dd>
+      </div>
+      <div>
+        <dt>Rationale</dt>
+        <dd id="ov-panel-rationale">Use the overview to understand the structure of the model quickly. Use the detailed tabs when you need step-by-step operational logic.</dd>
+      </div>
+      <div>
+        <dt>Input</dt>
+        <dd id="ov-panel-input">Shared programme entry information and the summary logic from the detailed branches.</dd>
+      </div>
+      <div>
+        <dt>Output</dt>
+        <dd id="ov-panel-output">A high-level understanding of how startups move through the accelerator system.</dd>
+      </div>
+      <div>
+        <dt>Next step</dt>
+        <dd id="ov-panel-next">Review Equity Track detail or Fast Track detail for the operational version of each branch.</dd>
+      </div>
+    </dl>
+    <p class="hint">Overview interactions are intentionally brief. They summarise each major node rather than repeating the full detailed reference text.</p>
+  </aside>
+</div>
+</div>
+
+<!-- ===================== PANEL 1: EQUITY TRACK DETAIL (FIXED BOTTOM – COMPLETELY REBUILT) ===================== -->
+<div id="p1" class="pnl on">
+<p class="pnl-desc">Diagnosis → demand profile → supply profile → matching (fit‑first, budget‑constrained) → assign/review/gap → handoff to delivery.</p>
+<div class="eq-layout">
+  <div class="eq-flow-wrap">
+<svg width="100%" viewBox="0 0 1100 1950">
+<defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M2 1.5L8 5L2 8.5" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<text class="phase-lbl" x="60" y="24" style="fill:var(--blue-700);font-size:13px">Equity Track — diagnosis → demand → supply → matching → assignment</text>
+<rect x="40" y="40" width="1020" height="420" rx="14" fill="none" stroke="var(--border)" stroke-width=".5" stroke-dasharray="8 4"/>
+<text class="phase-lbl" x="66" y="62" style="font-size:12px">Phase C — Diagnosis (demand side)</text>
+<g class="n-refine"><rect x="66" y="78" width="440" height="72" rx="8"/></g>
+<text class="lbl" x="88" y="100" style="font-size:15px">4. Scored mentoring-need signal</text>
+<text class="sub2" x="88" y="118" style="font-size:12px">Primary+secondary needs, urgency, intensity</text>
+<g class="n-tobuild"><rect x="560" y="78" width="440" height="72" rx="8"/></g>
+<text class="lbl" x="582" y="100" style="font-size:15px">5. Context and reviewer signal</text>
+<text class="sub2" x="582" y="118" style="font-size:12px">Founder narrative, capability gaps, strategic issues</text>
+<line x1="286" y1="150" x2="286" y2="170" class="arr-line"/>
+<line x1="780" y1="150" x2="780" y2="170" class="arr-line"/>
+<line x1="286" y1="170" x2="780" y2="170" class="arr-line"/>
+<line x1="530" y1="170" x2="530" y2="192" class="arr-line" marker-end="url(#ah2)"/>
+<polygon points="530,194 594,228 530,262 466,228" class="diamond-stroke" style="stroke:var(--blue-700)"/>
+<text class="lbl" x="530" y="222" text-anchor="middle" style="font-size:13px">6. Signals</text>
+<text class="sub2" x="530" y="238" text-anchor="middle" style="font-size:12px">agree?</text>
+<line x1="530" y1="262" x2="530" y2="290" class="arr-line" marker-end="url(#ah2)"/>
+<text class="sub2" x="546" y="280" style="fill:var(--green-700);font-size:12px">Agree</text>
+<line x1="594" y1="228" x2="790" y2="228" class="arr-line" marker-end="url(#ah2)"/>
+<text class="sub2" x="640" y="218" style="fill:var(--coral-700);font-size:12px">Conflict</text>
+<g class="n-tobuild"><rect x="790" y="204" width="220" height="56" rx="7"/></g>
+<text class="lbl" x="812" y="224" style="font-size:14px">7. Conflict resolution</text>
+<text class="sub2" x="812" y="242" style="font-size:12px">Reviewer finalises need interpretation</text>
+<path d="M900 260 L900 278 L538 278" fill="none" class="arr-line-d" marker-end="url(#ah2)"/>
+<text class="sub2" x="720" y="274" style="fill:var(--blue-700);font-size:11px">Return</text>
+<g class="key-object n-tobuild"><rect x="200" y="290" width="600" height="110" rx="8" stroke-width="1.5"/></g>
+<text class="lbl" x="226" y="314" style="font-size:15px">8. Startup demand profile + package</text>
+<text class="sub2" x="226" y="336" style="font-size:12px">Demand: primary/secondary needs · urgency · intensity · mentor type</text>
+<text class="sub2" x="226" y="352" style="font-size:12px">Package: priority tier (A/B/C) + Lite/Core/Intensive</text>
+<rect x="820" y="296" width="220" height="90" rx="6" class="note-box"/>
+<text class="sub2" x="836" y="316" style="font-size:11px;fill:var(--amber-700);font-weight:500">Package based on:</text>
+<text class="sub2" x="836" y="334" style="font-size:11px;fill:var(--amber-700)">urgency, intensity, startup priority</text>
+<line x1="500" y1="400" x2="500" y2="430" class="arr-line" marker-end="url(#ah2)"/>
+<rect x="360" y="430" width="280" height="56" rx="8" fill="var(--card)" stroke="var(--amber-700)" stroke-width="1"/>
+<text class="lbl" x="500" y="452" text-anchor="middle" style="font-size:13px">Budget mode?</text>
+<text class="sub2" x="500" y="468" text-anchor="middle" style="font-size:12px">Startup-level or cohort-level</text>
+<line x1="400" y1="486" x2="400" y2="514" class="arr-line" marker-end="url(#ah2)"/>
+<rect x="300" y="514" width="200" height="44" rx="6" fill="var(--card)" stroke="var(--border)" stroke-width=".6"/>
+<text class="sub2" x="400" y="532" text-anchor="middle" style="font-size:11px">Startup-level budget</text>
+<line x1="600" y1="486" x2="600" y2="514" class="arr-line" marker-end="url(#ah2)"/>
+<rect x="500" y="514" width="200" height="44" rx="6" fill="var(--card)" stroke="var(--border)" stroke-width=".6"/>
+<text class="sub2" x="600" y="532" text-anchor="middle" style="font-size:11px">Cohort-level budget</text>
+<line x1="400" y1="558" x2="400" y2="576" class="arr-line"/>
+<line x1="600" y1="558" x2="600" y2="576" class="arr-line"/>
+<line x1="400" y1="576" x2="600" y2="576" class="arr-line"/>
+<line x1="500" y1="576" x2="500" y2="598" class="arr-line" marker-end="url(#ah2)"/>
+<rect x="40" y="600" width="1020" height="140" rx="14" fill="none" stroke="var(--border)" stroke-width=".5" stroke-dasharray="8 4"/>
+<text class="phase-lbl" x="66" y="620" style="font-size:12px">Phase D — Mentor supply side</text>
+<g class="n-analysed"><rect x="66" y="634" width="440" height="56" rx="8"/></g>
+<text class="lbl" x="88" y="656" style="font-size:15px">9. Mentor database</text>
+<text class="sub2" x="88" y="676" style="font-size:12px">Raw supply pool, uneven quality</text>
+<g class="key-object n-refine"><rect x="560" y="634" width="440" height="80" rx="8" stroke-width="1.5"/></g>
+<text class="lbl" x="582" y="656" style="font-size:15px">10. Standardised mentor supply profile</text>
+<text class="sub2" x="582" y="674" style="font-size:12px">Expertise · sector · stage · style · capacity · confidence (H/M/L)</text>
+<line x1="286" y1="690" x2="286" y2="710" class="arr-line"/>
+<line x1="780" y1="714" x2="780" y2="728" class="arr-line"/>
+<line x1="286" y1="710" x2="780" y2="710" class="arr-line"/>
+<line x1="500" y1="710" x2="500" y2="740" class="arr-line" marker-end="url(#ah2)"/>
+<path d="M500 598 L500 606 L44 606 L44 720 L286 720" fill="none" class="arr-line-d" opacity=".35"/>
+<rect x="40" y="740" width="1020" height="1050" rx="14" fill="none" stroke="var(--border)" stroke-width=".5" stroke-dasharray="8 4"/>
+<text class="phase-lbl" x="66" y="762" style="font-size:12px">Phase E — Matching engine (fit-first, budget-second)</text>
+<g class="n-tobuild"><rect x="300" y="776" width="460" height="66" rx="8"/></g>
+<text class="lbl" x="326" y="798" style="font-size:14px">11A. Candidate fit ranking</text>
+<text class="sub2" x="326" y="816" style="font-size:12px">Primary need → secondary → sector → stage → style</text>
+<line x1="530" y1="842" x2="530" y2="864" class="arr-line" marker-end="url(#ah2)"/>
+<g class="n-tobuild"><rect x="300" y="864" width="460" height="56" rx="8"/></g>
+<text class="lbl" x="326" y="886" style="font-size:14px">11B. Feasibility filter</text>
+<text class="sub2" x="326" y="904" style="font-size:12px">Capacity, affordability, conflicts</text>
+<line x1="530" y1="920" x2="530" y2="942" class="arr-line" marker-end="url(#ah2)"/>
+<g class="n-tobuild"><rect x="300" y="942" width="460" height="56" rx="8"/></g>
+<text class="lbl" x="326" y="964" style="font-size:14px">11C. Assignment boundary filter</text>
+<text class="sub2" x="326" y="982" style="font-size:12px">1 lead default · max +1 specialist · max 2 active · min fit threshold</text>
+<rect x="780" y="776" width="260" height="130" rx="7" class="note-box"/>
+<text class="sub2" x="798" y="796" style="font-size:12px;fill:var(--amber-700);font-weight:500">Assignment boundaries</text>
+<text class="sub2" x="798" y="816" style="font-size:11px">• 1 lead mentor default · max +1 specialist</text>
+<text class="sub2" x="798" y="834" style="font-size:11px">• Max 2 active per cycle · no micro‑allocations</text>
+<line x1="530" y1="998" x2="530" y2="1018" class="arr-line" marker-end="url(#ah2)"/>
+<g class="key-object n-tobuild"><rect x="340" y="1018" width="380" height="44" rx="8" stroke-width="1.5"/></g>
+<text class="lbl" x="366" y="1040" style="font-size:14px">11D. Ranked shortlist output</text>
+<text class="sub2" x="366" y="1056" style="font-size:12px">Acceptable options — or none</text>
+<text class="st-tobuild" x="700" y="1038" text-anchor="end" style="font-size:9px">To build</text>
+<line x1="530" y1="1062" x2="530" y2="1090" class="arr-line" marker-end="url(#ah2)"/>
+
+<!-- ========== COMPLETELY REBUILT BOTTOM SECTION (12. Assign / review / gap and below) ========== -->
+<polygon points="530,1092 600,1134 530,1176 460,1134" class="diamond-stroke" style="stroke:var(--blue-700)"/>
+<text class="lbl" x="530" y="1128" text-anchor="middle" style="font-size:13px">12. Assign /</text>
+<text class="sub2" x="530" y="1144" text-anchor="middle" style="font-size:12px">review / gap</text>
+
+<!-- ===== STRONG PATH (down, center) ===== -->
+<line x1="530" y1="1176" x2="530" y2="1218" class="arr-line" marker-end="url(#ah2)"/>
+<text class="sub2" x="548" y="1204" style="fill:var(--green-700);font-size:12px">Strong</text>
+<g class="n-tobuild"><rect x="400" y="1218" width="260" height="52" rx="7"/></g>
+<text class="lbl" x="426" y="1240" style="font-size:14px">Assign mentor → Step 13</text>
+<text class="sub2" x="426" y="1258" style="font-size:12px">Pass package, scope, objectives</text>
+
+<!-- Mandatory handoff note (moved right, not overlapping) -->
+<rect x="676" y="1298" width="324" height="60" rx="6" fill="none" stroke="var(--blue-500)" stroke-width=".6" stroke-dasharray="5 3"/>
+<text class="sub2" x="692" y="1316" style="font-size:11px;fill:var(--blue-700);font-weight:500">Mandatory handoff to Step 13:</text>
+<text class="sub2" x="692" y="1334" style="font-size:11px;fill:var(--blue-700)">mentor, package, hours, scope, outcomes, co‑support flag</text>
+
+<line x1="530" y1="1270" x2="530" y2="1306" class="arr-line" marker-end="url(#ah2)"/>
+<rect x="398" y="1306" width="264" height="32" rx="7" fill="none" stroke="var(--blue-500)" stroke-width=".7" stroke-dasharray="5 3"/>
+<text class="sub2" x="530" y="1326" text-anchor="middle" style="fill:var(--blue-700);font-weight:500;font-size:12px">→ Continues in Mentoring delivery</text>
+
+<!-- ===== MEDIUM PATH (right) ===== -->
+<line x1="600" y1="1134" x2="800" y2="1134" class="arr-line" marker-end="url(#ah2)"/>
+<text class="sub2" x="660" y="1124" style="fill:var(--amber-700);font-size:12px">Medium</text>
+<g class="n-tobuild"><rect x="800" y="1110" width="200" height="44" rx="7"/></g>
+<text class="lbl" x="814" y="1130" style="font-size:14px">Review call</text>
+<text class="sub2" x="814" y="1148" style="font-size:12px">Manual assessment</text>
+
+<line x1="900" y1="1154" x2="900" y2="1192" class="arr-line" marker-end="url(#ah2)"/>
+<rect x="800" y="1192" width="280" height="80" rx="7" fill="var(--card)" stroke="var(--amber-700)" stroke-width=".6"/>
+<text class="sub2" x="820" y="1212" style="font-size:12px;font-weight:500">After review:</text>
+<text class="sub2" x="820" y="1230" style="font-size:11px">→ Assign chosen mentor → Step 13</text>
+<text class="sub2" x="820" y="1246" style="font-size:11px">→ Rescope and rerun shortlist (11A)</text>
+<text class="sub2" x="820" y="1262" style="font-size:11px">→ Move to gap handling</text>
+
+<!-- ===== WEAK / NONE PATH (left) ===== -->
+<line x1="460" y1="1134" x2="240" y2="1134" class="arr-line" marker-end="url(#ah2)"/>
+<text class="sub2" x="300" y="1124" style="fill:var(--rose-700);font-size:12px">Weak / none</text>
+<g class="n-rose"><rect x="66" y="1110" width="174" height="44" rx="7"/></g>
+<text class="lbl" x="90" y="1130" style="font-size:14px;fill:var(--rose-800)">Gap handling</text>
+<text class="sub2" x="90" y="1148" style="font-size:12px">No acceptable match</text>
+
+<line x1="153" y1="1154" x2="153" y2="1192" class="arr-line" marker-end="url(#ah2)"/>
+<polygon points="153,1194 200,1222 153,1250 106,1222" fill="var(--card)" stroke="var(--rose-700)" stroke-width="1"/>
+<text class="sub2" x="153" y="1216" text-anchor="middle" style="font-size:10px">External</text>
+<text class="sub2" x="153" y="1230" text-anchor="middle" style="font-size:10px">search?</text>
+
+<line x1="106" y1="1222" x2="46" y2="1222" class="arr-line"/>
+<line x1="46" y1="1222" x2="46" y2="1262" class="arr-line" marker-end="url(#ah2)"/>
+<text class="sub2" x="60" y="1214" style="fill:var(--green-700);font-size:10px">Yes</text>
+<g class="n-tobuild"><rect x="26" y="1262" width="140" height="40" rx="6"/></g>
+<text class="sub2" x="42" y="1282" style="font-size:11px">External mentor search</text>
+
+<line x1="200" y1="1222" x2="270" y2="1222" class="arr-line"/>
+<line x1="270" y1="1222" x2="270" y2="1262" class="arr-line" marker-end="url(#ah2)"/>
+<text class="sub2" x="226" y="1214" style="fill:var(--rose-700);font-size:10px">No</text>
+
+<line x1="270" y1="1262" x2="270" y2="1282" class="arr-line"/>
+<line x1="220" y1="1282" x2="370" y2="1282" class="arr-line"/>
+<line x1="220" y1="1282" x2="220" y2="1310" class="arr-line" marker-end="url(#ah2)"/>
+<line x1="340" y1="1282" x2="340" y2="1310" class="arr-line" marker-end="url(#ah2)"/>
+
+<!-- Two white boxes (good-enough substitute / defer) with proper sizing -->
+<g class="n-neutral"><rect x="174" y="1310" width="100" height="44" rx="6"/></g>
+<text class="sub2" x="224" y="1324" text-anchor="middle" style="font-size:11px">Good-enough</text>
+<text class="sub2" x="224" y="1338" text-anchor="middle" style="font-size:11px">substitute</text>
+
+<g class="n-neutral"><rect x="278" y="1310" width="110" height="44" rx="6"/></g>
+<text class="sub2" x="333" y="1324" text-anchor="middle" style="font-size:11px">Defer /</text>
+<text class="sub2" x="333" y="1338" text-anchor="middle" style="font-size:11px">alt. support</text>
+
+<!-- Note box for search condition (moved right, not overlapping) -->
+<rect x="40" y="1370" width="220" height="62" rx="6" class="note-box"/>
+<text class="sub2" x="56" y="1388" style="font-size:11px;fill:var(--amber-700)">Search only if:</text>
+<text class="sub2" x="56" y="1406" style="font-size:11px;fill:var(--amber-700)">high priority & critical need</text>
+
+<!-- Feedback correction loop note -->
+<rect x="730" y="1380" width="320" height="46" rx="7" fill="none" stroke="var(--border)" stroke-width=".5" stroke-dasharray="5 3"/>
+<text class="sub2" x="748" y="1398" style="font-size:11px;fill:var(--muted)">Initial allocation + feedback correction.</text>
+<text class="sub2" x="748" y="1414" style="font-size:11px;fill:var(--muted)">Steps 16–18 provide correction loop.</text>
+<!-- Interactive click layer: Equity Track detail only -->
+<g id="eq-hotspots">
+  <rect class="eq-hotspot" data-step="eq-04" x="66" y="78" width="440" height="72" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-05" x="560" y="78" width="440" height="72" rx="8"/>
+  <polygon class="eq-hotspot" data-step="eq-06" points="530,194 594,228 530,262 466,228"/>
+  <rect class="eq-hotspot" data-step="eq-07" x="790" y="204" width="220" height="56" rx="7"/>
+  <rect class="eq-hotspot" data-step="eq-08" x="200" y="290" width="600" height="110" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-budget" x="360" y="430" width="280" height="56" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-09" x="66" y="634" width="440" height="56" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-10" x="560" y="634" width="440" height="80" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-11a" x="300" y="776" width="460" height="66" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-11b" x="300" y="864" width="460" height="56" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-11c" x="300" y="942" width="460" height="56" rx="8"/>
+  <rect class="eq-hotspot" data-step="eq-11d" x="340" y="1018" width="380" height="44" rx="8"/>
+  <polygon class="eq-hotspot" data-step="eq-12" points="530,1092 600,1134 530,1176 460,1134"/>
+  <rect class="eq-hotspot" data-step="eq-assign" x="400" y="1218" width="260" height="52" rx="7"/>
+  <rect class="eq-hotspot" data-step="eq-review" x="800" y="1110" width="200" height="44" rx="7"/>
+  <rect class="eq-hotspot" data-step="eq-gap" x="66" y="1110" width="174" height="44" rx="7"/>
+  <polygon class="eq-hotspot" data-step="eq-search" points="153,1194 200,1222 153,1250 106,1222"/>
+  <rect class="eq-hotspot" data-step="eq-external" x="26" y="1262" width="140" height="40" rx="6"/>
+  <rect class="eq-hotspot" data-step="eq-substitute" x="174" y="1310" width="100" height="44" rx="6"/>
+  <rect class="eq-hotspot" data-step="eq-defer" x="278" y="1310" width="110" height="44" rx="6"/>
+</g>
+</svg>
+  </div>
+  <aside class="eq-sidepanel" id="eq-panel" aria-live="polite">
+    <h3 id="eq-panel-title">Equity Track reference</h3>
+    <div class="meta" id="eq-panel-meta">Click a main box or decision point</div>
+    <p class="lead" id="eq-panel-lead">This panel explains why a step exists, what it takes in, what it produces, and where it leads next. It is intentionally short so it can later scale into a fuller HTML reference layer.</p>
+    <dl>
+      <div>
+        <dt>Purpose</dt>
+        <dd id="eq-panel-purpose">Select any highlighted main step or decision diamond in the Equity Track detail panel.</dd>
+      </div>
+      <div>
+        <dt>Rationale</dt>
+        <dd id="eq-panel-rationale">The goal is to keep the visual flow unchanged while making the operating logic easier to understand.</dd>
+      </div>
+      <div>
+        <dt>Input</dt>
+        <dd id="eq-panel-input">Use the current process flow as the visual reference.</dd>
+      </div>
+      <div>
+        <dt>Output</dt>
+        <dd id="eq-panel-output">A short operational explanation for the selected step.</dd>
+      </div>
+      <div>
+        <dt>Next step</dt>
+        <dd id="eq-panel-next">Choose a box or decision point to inspect the Equity Track logic.</dd>
+      </div>
+    </dl>
+    <div class="hint">First version only: Equity Track detail, main process boxes, and decision diamonds. Notes and side comments remain passive.</div>
+  </aside>
+</div>
+</div>
+
+<!-- ===================== PANEL 2: MENTORING DELIVERY (original detailed) ===================== -->
+<div id="p2" class="pnl">
+<div class="eq-layout">
+  <div class="eq-flow-wrap">
+<p class="pnl-desc">Delivery begins from matching output. Step 13 receives mentor, package, hours, scope, outcomes. One lead mentor default. Specialist co‑support only if approved.</p>
+<svg width="100%" viewBox="0 0 1100 1520">
+<defs><marker id="ah4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M2 1.5L8 5L2 8.5" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<text class="phase-lbl" x="60" y="28" style="fill:var(--blue-700);font-size:13px">Equity Track — mentoring delivery (continuation)</text>
+<text class="sub2" x="60" y="48" style="font-size:13px">Starts from fit‑ranked assignment (Step 12). Package‑constrained. One lead mentor default.</text>
+<rect x="740" y="14" width="300" height="56" rx="7" class="note-box"/>
+<text class="sub2" x="758" y="34" style="font-size:12px;fill:var(--amber-700)">Admin kept light; mentor focuses</text>
+<text class="sub2" x="758" y="50" style="font-size:12px;fill:var(--amber-700)">on advice and stage‑gate input.</text>
+<text class="sub2" x="758" y="66" style="font-size:12px;fill:var(--amber-700)">Program team owns follow‑up.</text>
+<rect x="40" y="76" width="1020" height="1420" rx="16" fill="none" stroke="var(--border)" stroke-width=".6" stroke-dasharray="10 5"/>
+<text class="phase-lbl" x="66" y="100" style="font-size:12px">Phase G — Mentoring delivery</text>
+<text class="sub2" x="530" y="120" text-anchor="middle" style="font-size:10px;fill:var(--blue-700)">Input from Step 12</text>
+<g class="key-object"><rect x="260" y="128" width="540" height="110" rx="8" stroke-width="1.5"/></g>
+<text class="lbl" x="290" y="150" style="font-size:15px">Input from matching engine</text>
+<text class="sub2" x="290" y="170" style="font-size:12px">• Selected mentor   • Package tier (Lite/Core/Intensive)</text>
+<text class="sub2" x="290" y="186" style="font-size:12px">• Hour budget   • Objective   • Scope   • Expected outcomes</text>
+<text class="sub2" x="290" y="202" style="font-size:12px">• Co‑support flag (specialist if approved)</text>
+<line x1="530" y1="238" x2="530" y2="260" class="arr-line" marker-end="url(#ah4)"/>
+<g class="n-tobuild">
+  <rect x="252" y="260" width="556" height="130" rx="8" fill="var(--blue-50)" stroke="var(--blue-700)" stroke-width="1.5"/>
+  <rect x="252" y="260" width="556" height="130" rx="8" fill="none" stroke="var(--stone-600)" stroke-width="0.6" stroke-dasharray="3 2"/>
+</g>
+<text class="lbl" x="280" y="288" style="font-size:16px">13. Mentoring mandate (configured)</text>
+<text class="sub2" x="280" y="308" style="font-size:13px">Receives: mentor · package · hours · scope · outcomes · co‑support flag</text>
+<text class="sub2" x="280" y="328" style="font-size:13px">• Topic & goal · agenda · success criteria</text>
+<text class="sub2" x="280" y="348" style="font-size:13px">• Hours: Lite 5h / Core 10h / Intensive 15h</text>
+<text class="st-tobuild" x="796" y="288" text-anchor="end" style="font-size:11px">To build</text>
+<rect x="66" y="260" width="174" height="100" rx="7" class="note-box"/>
+<text class="sub2" x="82" y="280" style="font-size:12px;fill:var(--amber-700);font-weight:500">Mandatory inputs</text>
+<text class="sub2" x="82" y="298" style="font-size:11px">• Selected mentor</text>
+<text class="sub2" x="82" y="314" style="font-size:11px">• Package + hours</text>
+<text class="sub2" x="82" y="330" style="font-size:11px">• Scope + objectives</text>
+<text class="sub2" x="82" y="346" style="font-size:11px">• Co‑support if approved</text>
+<line x1="530" y1="390" x2="530" y2="420" class="arr-line" marker-end="url(#ah4)"/>
+<g class="n-tobuild"><rect x="290" y="420" width="480" height="86" rx="8"/></g>
+<text class="lbl" x="318" y="450" style="font-size:16px">14. Kickoff / scope alignment</text>
+<text class="sub2" x="318" y="472" style="font-size:13px">Problem definition, in/out of scope, startup deliverables, mentor role</text>
+<line x1="530" y1="506" x2="530" y2="544" class="arr-line" marker-end="url(#ah4)"/>
+<rect x="170" y="544" width="720" height="210" rx="14" fill="none" stroke="var(--blue-500)" stroke-width="1" stroke-dasharray="8 4" opacity=".45"/>
+<text class="phase-lbl" x="196" y="568" style="fill:var(--blue-700);font-size:12px">Repeating cycle</text>
+<g class="n-tobuild"><rect x="210" y="582" width="580" height="110" rx="8"/></g>
+<text class="lbl" x="240" y="612" style="font-size:16px">15. Mentoring sessions + task follow-up</text>
+<text class="sub2" x="240" y="634" style="font-size:13px">Session → key topics → blockers → tasks → deadlines → progress check</text>
+<text class="sub2" x="240" y="652" style="font-size:13px">hours used / remaining</text>
+<path d="M790 640 L860 640 L860 740 L200 740 L200 640 L210 640" fill="none" class="arr-line-d" marker-end="url(#ah4)"/>
+<text class="sub2" x="530" y="758" text-anchor="middle" style="fill:var(--blue-700);font-size:12px">Next session — repeat until fit check or hours exhausted</text>
+<rect x="66" y="582" width="130" height="110" rx="7" fill="none" stroke="var(--border)" stroke-width=".6" stroke-dasharray="5 3"/>
+<text class="sub2" x="80" y="602" style="font-size:12px;font-weight:500">Roles</text>
+<text class="sub2" x="80" y="620" style="font-size:12px">Mentor → guidance</text>
+<text class="sub2" x="80" y="638" style="font-size:12px">Startup → execution</text>
+<text class="sub2" x="80" y="656" style="font-size:12px">Program → admin</text>
+<line x1="530" y1="760" x2="530" y2="810" class="arr-line" marker-end="url(#ah4)"/>
+<polygon points="530,814 618,866 530,918 442,866" class="diamond-stroke" style="stroke:var(--blue-700)"/>
+<text class="lbl" x="530" y="856" text-anchor="middle" style="font-size:14px">16. Working fit</text>
+<text class="sub2" x="530" y="874" text-anchor="middle" style="font-size:13px">/ startup feedback</text>
+<rect x="66" y="780" width="200" height="80" rx="7" class="note-box"/>
+<text class="sub2" x="82" y="800" style="font-size:12px;fill:var(--amber-700)">Startup evaluates:</text>
+<text class="sub2" x="82" y="818" style="font-size:12px">• Chemistry / working fit</text>
+<text class="sub2" x="82" y="836" style="font-size:12px">• Communication quality</text>
+<text class="sub2" x="82" y="854" style="font-size:12px">• Usefulness of guidance</text>
+<line x1="530" y1="918" x2="530" y2="980" class="arr-line" marker-end="url(#ah4)"/>
+<text class="sub2" x="552" y="954" style="fill:var(--green-700);font-size:13px">Good fit</text>
+<line x1="618" y1="866" x2="810" y2="866" class="arr-line" marker-end="url(#ah4)"/>
+<text class="sub2" x="660" y="856" style="fill:var(--amber-700);font-size:13px">Adjust</text>
+<g class="n-refine"><rect x="810" y="846" width="200" height="42" rx="7"/></g>
+<text class="lbl" x="834" y="866" style="font-size:13px;fill:var(--amber-800)">Adapt scope, keep mentor</text>
+<path d="M910 888 L910 920 L870 920 L870 690 L790 690" fill="none" class="arr-line-d" marker-end="url(#ah4)"/>
+<text class="sub2" x="888" y="912" style="font-size:11px;fill:var(--blue-700)">Back to sessions</text>
+<line x1="442" y1="866" x2="240" y2="866" class="arr-line" marker-end="url(#ah4)"/>
+<text class="sub2" x="310" y="856" style="fill:var(--rose-700);font-size:13px">Poor fit</text>
+<g class="n-rose"><rect x="66" y="846" width="174" height="56" rx="7"/></g>
+<text class="lbl" x="90" y="866" style="font-size:13px;fill:var(--rose-800)">Replace / reassign</text>
+<text class="sub2" x="90" y="882" style="font-size:11px">Or add specialist if justified</text>
+<path d="M153 846 L153 340 L258 340" fill="none" class="arr-line-d" marker-end="url(#ah4)"/>
+<text class="sub2" x="110" y="590" style="font-size:11px;fill:var(--rose-700);writing-mode:tb">↑ Back to mandate</text>
+<g class="n-tobuild"><rect x="280" y="980" width="500" height="100" rx="8"/></g>
+<text class="lbl" x="310" y="1010" style="font-size:16px">17. Stage gate review</text>
+<text class="sub2" x="310" y="1032" style="font-size:13px">Inputs: tasks completed, progress, mentor recommendation (ready/partly/not ready), program view</text>
+<rect x="800" y="980" width="220" height="86" rx="7" class="note-box"/>
+<text class="sub2" x="818" y="1000" style="font-size:12px;fill:var(--amber-700)">Mentor recommendation:</text>
+<text class="sub2" x="818" y="1018" style="font-size:12px">• Ready</text>
+<text class="sub2" x="818" y="1034" style="font-size:12px">• Partly ready</text>
+<line x1="530" y1="1080" x2="530" y2="1120" class="arr-line" marker-end="url(#ah4)"/>
+<polygon points="530,1124 618,1172 530,1220 442,1172" class="diamond-stroke" style="stroke:var(--blue-700)"/>
+<text class="sub2" x="530" y="1164" text-anchor="middle" style="font-size:13px">Gate</text>
+<text class="sub2" x="530" y="1182" text-anchor="middle" style="font-size:13px">outcome?</text>
+<line x1="530" y1="1220" x2="530" y2="1280" class="arr-line" marker-end="url(#ah4)"/>
+<text class="sub2" x="552" y="1256" style="fill:var(--green-700);font-size:13px">Ready</text>
+<line x1="618" y1="1172" x2="810" y2="1172" class="arr-line" marker-end="url(#ah4)"/>
+<text class="sub2" x="660" y="1162" style="fill:var(--amber-700);font-size:13px">More support</text>
+<g class="n-refine"><rect x="810" y="1152" width="200" height="42" rx="7"/></g>
+<text class="lbl" x="834" y="1176" style="font-size:13px">Continue sessions</text>
+<path d="M1010 1172 L1040 1172 L1040 650 L790 650" fill="none" class="arr-line-d" marker-end="url(#ah4)"/>
+<line x1="442" y1="1172" x2="240" y2="1172" class="arr-line" marker-end="url(#ah4)"/>
+<text class="sub2" x="300" y="1162" style="fill:var(--rose-700);font-size:13px">Not ready</text>
+<g class="n-rose"><rect x="66" y="1152" width="174" height="42" rx="7"/></g>
+<text class="lbl" x="90" y="1172" style="font-size:13px;fill:var(--rose-800)">Intervene / change</text>
+<path d="M153 1152 L153 340 L258 340" fill="none" class="arr-line-d" marker-end="url(#ah4)"/>
+<g class="n-tobuild"><rect x="260" y="1280" width="540" height="86" rx="8"/></g>
+<text class="lbl" x="290" y="1310" style="font-size:16px">18. Cycle close / next-step decision</text>
+<text class="sub2" x="290" y="1332" style="font-size:13px">Triggered: hours exhausted, goal reached, or program decision</text>
+<line x1="530" y1="1366" x2="530" y2="1400" class="arr-line" marker-end="url(#ah4)"/>
+<line x1="530" y1="1400" x2="530" y2="1424" class="arr-line"/>
+<line x1="178" y1="1424" x2="882" y2="1424" class="arr-line"/>
+<line x1="178" y1="1424" x2="178" y2="1450" class="arr-line" marker-end="url(#ah4)"/>
+<line x1="412" y1="1424" x2="412" y2="1450" class="arr-line" marker-end="url(#ah4)"/>
+<line x1="648" y1="1424" x2="648" y2="1450" class="arr-line" marker-end="url(#ah4)"/>
+<line x1="882" y1="1424" x2="882" y2="1450" class="arr-line" marker-end="url(#ah4)"/>
+<g class="n-built"><rect x="108" y="1450" width="140" height="64" rx="7"/></g>
+<text class="lbl" x="178" y="1472" text-anchor="middle" style="fill:var(--green-800);font-size:14px">Close</text>
+<g class="n-refine"><rect x="342" y="1450" width="140" height="64" rx="7"/></g>
+<text class="lbl" x="412" y="1472" text-anchor="middle" style="fill:var(--amber-800);font-size:14px">Continue</text>
+<g class="n-tobuild"><rect x="578" y="1450" width="140" height="64" rx="7"/></g>
+<text class="lbl" x="648" y="1472" text-anchor="middle" style="font-size:14px">New support</text>
+<g class="n-neutral"><rect x="812" y="1450" width="140" height="64" rx="7"/></g>
+<text class="lbl" x="882" y="1472" text-anchor="middle" style="font-size:14px">Move on</text>
+<path d="M412 1514 L412 1550 L50 1550 L50 260 L258 260" fill="none" class="arr-line-d" marker-end="url(#ah4)"/>
+<text class="sub2" x="70" y="1570" style="font-size:11px;fill:var(--blue-700)">Continue or new support → back to mandate setup (Step 13)</text>
+  <g>
+    <rect class="eq-hotspot md-hotspot" data-step="md-input" x="260" y="128" width="540" height="110" rx="8"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-13" x="252" y="260" width="556" height="130" rx="8"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-14" x="290" y="420" width="480" height="86" rx="8"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-15" x="210" y="582" width="580" height="110" rx="8"/>
+    <polygon class="eq-hotspot md-hotspot" data-step="md-16" points="530,814 618,866 530,918 442,866"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-adjust" x="810" y="846" width="200" height="42" rx="7"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-reassign" x="66" y="846" width="174" height="56" rx="7"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-17" x="280" y="980" width="500" height="100" rx="8"/>
+    <polygon class="eq-hotspot md-hotspot" data-step="md-gate" points="530,1124 618,1172 530,1220 442,1172"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-continue-sessions" x="810" y="1152" width="200" height="42" rx="7"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-intervene" x="66" y="1152" width="174" height="42" rx="7"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-18" x="260" y="1280" width="540" height="86" rx="8"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-close" x="108" y="1450" width="140" height="64" rx="7"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-continue" x="342" y="1450" width="140" height="64" rx="7"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-new" x="578" y="1450" width="140" height="64" rx="7"/>
+    <rect class="eq-hotspot md-hotspot" data-step="md-moveon" x="812" y="1450" width="140" height="64" rx="7"/>
+  </g>
+</svg>
+  </div>
+  <aside class="eq-sidepanel" id="md-panel" aria-live="polite">
+    <h3 id="md-panel-title">Mentoring Delivery reference</h3>
+    <div class="meta" id="md-panel-meta">Click a main box or decision point</div>
+    <p class="lead" id="md-panel-lead">This panel explains the mentoring-delivery lifecycle without changing the visual flow. It follows the same low-risk interaction pattern used on the Equity and Fast Track tabs.</p>
+    <dl>
+      <div>
+        <dt>Purpose</dt>
+        <dd id="md-panel-purpose">Select any highlighted main step or decision diamond in the Mentoring Delivery panel.</dd>
+      </div>
+      <div>
+        <dt>Rationale</dt>
+        <dd id="md-panel-rationale">The goal is to make mandate, sessions, feedback, gates, and closure logic easier to understand while keeping the diagram stable.</dd>
+      </div>
+      <div>
+        <dt>Input</dt>
+        <dd id="md-panel-input">Use the current Mentoring Delivery flow as the visual reference.</dd>
+      </div>
+      <div>
+        <dt>Output</dt>
+        <dd id="md-panel-output">A short operational explanation for the selected Mentoring Delivery step.</dd>
+      </div>
+      <div>
+        <dt>Next step</dt>
+        <dd id="md-panel-next">Choose a box or decision point to inspect the Mentoring Delivery logic.</dd>
+      </div>
+    </dl>
+    <div class="hint">First version only: Mentoring Delivery main process boxes and decision diamonds. Notes and side comments remain passive.</div>
+  </aside>
+</div>
+</div>
+
+<!-- ===================== PANEL 3: FAST TRACK DETAIL (centered F4, no overlaps) ===================== -->
+<div id="p3" class="pnl">
+<p class="pnl-desc">Remediation paths are separate boxes. Both return to a visible recheck step. A Does Not Fit case can loop back into the start of the Equity diagnosis via a cross-track transition.</p>
+<div class="eq-layout">
+  <div class="eq-flow-wrap">
+<svg width="100%" viewBox="0 0 1300 1280" style="max-height:88vh">
+<defs><marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M2 1.5L8 5L2 8.5" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<text class="phase-lbl" x="40" y="20" style="fill:var(--coral-700)">Fast Track — investor readiness path</text>
+<text class="sub2" x="40" y="36">Evaluates investor-matching readiness, not mentoring needs</text>
+<rect x="30" y="50" width="1240" height="1200" rx="12" fill="none" stroke="var(--border)" stroke-width=".5" stroke-dasharray="8 4"/>
+<text class="phase-lbl" x="50" y="72">Phase F — Fast Track readiness evaluation</text>
+<g class="n-refine"><rect x="300" y="88" width="440" height="64" rx="7"/></g>
+<text class="lbl" x="320" y="110">F1. Readiness pre-check</text>
+<text class="sub2" x="320" y="130">Uses self-assessment, 1:1 review, stage‑based matrix</text>
+<line x1="520" y1="152" x2="520" y2="184" class="arr-ft" marker-end="url(#ah3)"/>
+<polygon points="520,186 600,232 520,278 440,232" class="diamond-stroke"/>
+<text class="lbl" x="520" y="224" text-anchor="middle" style="font-size:12px">F2. Readiness</text>
+<text class="sub2" x="520" y="242" text-anchor="middle">decision</text>
+<line x1="440" y1="232" x2="220" y2="232" class="arr-ft"/>
+<line x1="220" y1="232" x2="220" y2="316" class="arr-ft" marker-end="url(#ah3)"/>
+<text class="sub2" x="300" y="222" style="fill:var(--green-700);font-weight:500">Fit</text>
+<g class="n-built" style="opacity:.9"><rect x="120" y="316" width="200" height="56" rx="7"/></g>
+<text class="lbl" x="220" y="338" text-anchor="middle" style="fill:var(--green-800)">F3. Fit — ready</text>
+<text class="sub2" x="220" y="356" text-anchor="middle">Investor matching realistic</text>
+<line x1="220" y1="372" x2="220" y2="400" class="arr-ft" marker-end="url(#ah3)"/>
+<g class="n-tobuild"><rect x="120" y="400" width="200" height="48" rx="6"/></g>
+<text class="lbl" x="146" y="420">Collect data room</text>
+<line x1="220" y1="448" x2="220" y2="472" class="arr-ft" marker-end="url(#ah3)"/>
+<g class="n-tobuild"><rect x="120" y="472" width="200" height="48" rx="6"/></g>
+<text class="lbl" x="146" y="492">Verify artifacts</text>
+<line x1="220" y1="520" x2="220" y2="544" class="arr-ft" marker-end="url(#ah3)"/>
+<g class="n-tobuild"><rect x="120" y="544" width="200" height="48" rx="6"/></g>
+<text class="lbl" x="146" y="564">Investment pack</text>
+<line x1="220" y1="592" x2="220" y2="618" class="arr-ft" marker-end="url(#ah3)"/>
+<g class="n-later"><rect x="120" y="618" width="200" height="44" rx="6"/></g>
+<text class="lbl" x="220" y="640" text-anchor="middle">Investor matching</text>
+<text class="st-later" x="220" y="672" text-anchor="middle">Later</text>
+<line x1="520" y1="278" x2="610" y2="278" class="arr-ft"/>
+<line x1="610" y1="278" x2="610" y2="322" class="arr-ft" marker-end="url(#ah3)"/>
+<text class="sub2" x="570" y="304" style="fill:var(--amber-700);font-weight:500">Conditional</text>
+<g class="n-refine"><rect x="490" y="322" width="240" height="56" rx="7"/></g>
+<text class="lbl" x="610" y="344" text-anchor="middle" style="fill:var(--amber-800)">F4. Missing items ID'd</text>
+<text class="sub2" x="610" y="362" text-anchor="middle">Define gaps</text>
+<line x1="610" y1="378" x2="610" y2="420" class="arr-ft" marker-end="url(#ah3)"/>
+<line x1="610" y1="420" x2="610" y2="444" class="arr-ft"/>
+<line x1="522" y1="444" x2="698" y2="444" class="arr-ft"/>
+<line x1="522" y1="444" x2="522" y2="474" class="arr-ft" marker-end="url(#ah3)"/>
+<line x1="698" y1="444" x2="698" y2="474" class="arr-ft" marker-end="url(#ah3)"/>
+<g class="n-tobuild"><rect x="414" y="474" width="212" height="64" rx="6"/></g>
+<text class="lbl" x="520" y="496" text-anchor="middle" style="font-size:12px">F5a. Startup delivers</text>
+<text class="sub2" x="520" y="516" text-anchor="middle">Submits missing evidence</text>
+<g class="n-tobuild"><rect x="614" y="474" width="172" height="64" rx="6"/></g>
+<text class="lbl" x="700" y="496" text-anchor="middle" style="font-size:12px">F5b. Paid support</text>
+<text class="sub2" x="700" y="516" text-anchor="middle">Targeted support closes gaps</text>
+<line x1="520" y1="538" x2="520" y2="566" class="arr-ft"/>
+<line x1="700" y1="538" x2="700" y2="566" class="arr-ft"/>
+<line x1="520" y1="566" x2="700" y2="566" class="arr-ft"/>
+<line x1="610" y1="566" x2="610" y2="596" class="arr-ft" marker-end="url(#ah3)"/>
+<g class="n-tobuild"><rect x="500" y="596" width="220" height="52" rx="6"/></g>
+<text class="lbl" x="610" y="618" text-anchor="middle">F6. Recheck readiness</text>
+<text class="sub2" x="610" y="636" text-anchor="middle">Both routes return</text>
+<path d="M500 622 L410 622 L410 594 L380 594" fill="none" class="arr-ft-d" marker-end="url(#ah3)"/>
+<text class="sub2" x="420" y="614" style="fill:var(--green-700);font-size:9px">If threshold met → Fit</text>
+<line x1="600" y1="232" x2="1000" y2="232" class="arr-ft"/>
+<line x1="1000" y1="232" x2="1000" y2="390" class="arr-ft" marker-end="url(#ah3)"/>
+<text class="sub2" x="760" y="222" style="fill:var(--rose-700);font-weight:500">Does not fit</text>
+<g class="n-rose"><rect x="890" y="390" width="220" height="60" rx="7"/></g>
+<text class="lbl" x="1000" y="414" text-anchor="middle" style="fill:var(--rose-800)">F7. Does not fit</text>
+<text class="sub2" x="1000" y="432" text-anchor="middle">Critical gaps</text>
+<line x1="1000" y1="450" x2="1000" y2="490" class="arr-ft"/>
+<line x1="920" y1="490" x2="1080" y2="490" class="arr-ft"/>
+<line x1="920" y1="490" x2="920" y2="520" class="arr-ft" marker-end="url(#ah3)"/>
+<line x1="1000" y1="490" x2="1000" y2="520" class="arr-ft" marker-end="url(#ah3)"/>
+<line x1="1080" y1="490" x2="1080" y2="520" class="arr-ft" marker-end="url(#ah3)"/>
+<g class="n-blue"><rect x="854" y="520" width="132" height="56" rx="6"/></g>
+<text class="lbl" x="920" y="542" text-anchor="middle" style="fill:var(--blue-800);font-size:11px">Move to</text>
+<text class="sub2" x="920" y="560" text-anchor="middle" style="fill:var(--blue-700)">Equity Track</text>
+<g class="n-neutral"><rect x="992" y="520" width="100" height="56" rx="6"/></g>
+<text class="lbl" x="1042" y="542" text-anchor="middle" style="font-size:11px">Wait</text>
+<g class="n-rose"><rect x="1098" y="520" width="90" height="56" rx="6"/></g>
+<text class="lbl" x="1143" y="542" text-anchor="middle" style="fill:var(--rose-800);font-size:11px">Drop</text>
+<path d="M854 548 L780 548 L780 620 L34 620 L34 88 L52 88" fill="none" class="arr-line-d" marker-end="url(#ah3)"/>
+<text class="sub2" x="60" y="636" style="font-size:9px;fill:var(--blue-700)">Cross-track return to Equity diagnosis</text>
+<g class="n-blue"><rect x="44" y="70" width="160" height="42" rx="6"/></g>
+<text class="sub2" x="66" y="86" style="fill:var(--blue-800)">Return target</text>
+<text class="sub2" x="66" y="102" style="fill:var(--blue-700)">Equity Track start</text>
+<g id="ft-hotspots">
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-01" x="300" y="88" width="440" height="64" rx="7"/>
+  <polygon class="eq-hotspot ft-hotspot" data-step="ft-02" points="520,186 600,232 520,278 440,232"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-03" x="120" y="316" width="200" height="56" rx="7"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-collect" x="120" y="400" width="200" height="48" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-verify" x="120" y="472" width="200" height="48" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-pack" x="120" y="544" width="200" height="48" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-match" x="120" y="618" width="200" height="44" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-04" x="490" y="322" width="240" height="56" rx="7"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-05a" x="414" y="474" width="212" height="64" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-05b" x="614" y="474" width="172" height="64" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-06" x="500" y="596" width="220" height="52" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-07" x="890" y="390" width="220" height="60" rx="7"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-equity" x="854" y="520" width="132" height="56" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-wait" x="992" y="520" width="100" height="56" rx="6"/>
+  <rect class="eq-hotspot ft-hotspot" data-step="ft-drop" x="1098" y="520" width="90" height="56" rx="6"/>
+</g>
+</svg>
+  </div>
+  <aside class="eq-sidepanel" id="ft-panel" aria-live="polite">
+    <h3 id="ft-panel-title">Fast Track reference</h3>
+    <div class="meta" id="ft-panel-meta">Click a main box or decision point</div>
+    <p class="lead" id="ft-panel-lead">This panel explains the Fast Track readiness path, the remediation logic, and the investor-readiness outputs without changing the visual flow.</p>
+    <dl>
+      <div>
+        <dt>Purpose</dt>
+        <dd id="ft-panel-purpose">Select any highlighted main step or decision diamond in the Fast Track detail panel.</dd>
+      </div>
+      <div>
+        <dt>Rationale</dt>
+        <dd id="ft-panel-rationale">The goal is to make the investor-readiness logic transparent while keeping the diagram stable.</dd>
+      </div>
+      <div>
+        <dt>Input</dt>
+        <dd id="ft-panel-input">Use the current Fast Track flow as the visual reference.</dd>
+      </div>
+      <div>
+        <dt>Output</dt>
+        <dd id="ft-panel-output">A short operational explanation for the selected Fast Track step.</dd>
+      </div>
+      <div>
+        <dt>Next step</dt>
+        <dd id="ft-panel-next">Choose a box or decision point to inspect the Fast Track logic.</dd>
+      </div>
+    </dl>
+    <div class="hint">First version only: Fast Track detail, main process boxes, and the readiness decision diamond. Notes and side comments remain passive.</div>
+  </aside>
+</div>
+</div>
+
+<!-- ===================== PANEL 4: LEGEND ===================== -->
+<div id="p4" class="pnl">
+<div class="legend-card">
+  <div class="legend-section">
+    <h3>Status labels</h3>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green-50);border:1.5px solid var(--green-700)"></div><span style="color:var(--green-700);font-weight:600">Built</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--teal-50);border:1.5px solid var(--teal-700)"></div><span style="color:var(--teal-700);font-weight:600">Analysed</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--amber-50);border:1.5px solid var(--amber-700)"></div><span style="color:var(--amber-700);font-weight:600">Refine</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--violet-50);border:1.5px solid var(--violet-700)"></div><span style="color:var(--violet-700);font-weight:600">To build</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--card);border:1.5px dashed var(--border)"></div><span style="color:var(--muted);font-weight:600">Later</span></div>
+  </div>
+  <div class="legend-section">
+    <h3>Connectors</h3>
+    <div class="legend-item"><div style="width:32px;height:2px;background:var(--stone-300);flex-shrink:0"></div> Forward flow</div>
+    <div class="legend-item"><div style="width:32px;height:0;border-top:2px dashed var(--stone-300);flex-shrink:0"></div> Return / recheck</div>
+  </div>
+  <div class="legend-section">
+    <h3>Key objects</h3>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--card);border:1.5px solid var(--stone-500)"></div> Demand profile · Supply profile · Shortlist · Handoff</div>
+  </div>
+</div>
+</div>
+
+
+<!-- ===================== PANEL 5: EXECUTIVE PROPOSAL ===================== -->
+<div id="p5" class="pnl">
+  <div class="doc-page">
+    <div class="doc-hero">
+      <div class="doc-kicker">Executive project proposal</div>
+      <h2>Standardised Accelerator Operating Model</h2>
+      <p class="subline">Approval note for the programme team and partners. This page is intentionally concise and should be read together with the Accelerator Process Flow, which acts as the visual backbone of the proposed operating model.</p>
+      <div class="doc-ref">
+        <span class="doc-pill">Greenfield project framing</span>
+        <span class="doc-pill">Reusable across future cohorts</span>
+        <span class="doc-pill">Process first, software later</span>
+      </div>
+    </div>
+    <div class="doc-grid">
+      <aside class="doc-sidebar">
+        <h3>Sections</h3>
+        <a href="#exec-purpose">Purpose</a>
+        <a href="#exec-why">Why now</a>
+        <a href="#exec-deliver">What the project will deliver</a>
+        <a href="#exec-scope">Scope</a>
+        <a href="#exec-reference">Reference model</a>
+        <a href="#exec-decision">Decision requested</a>
+      </aside>
+      <main class="doc-main">
+        <section class="doc-section" id="exec-purpose">
+          <h3>Purpose</h3>
+          <p>Approve a project to design and implement a standardised, auditable, and scalable operating model for the accelerator programme. The current working materials should be treated as exploratory starting work, not as an approved system. This project creates the approved operating system.</p>
+          <div class="doc-callout">
+            <p><strong>Core intent:</strong> preserve consistency across reviewers and actors, reduce process drift, and minimise administrative burden, especially on mentors.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="exec-why">
+          <h3>Why now</h3>
+          <div class="doc-band">
+            <div class="doc-card">
+              <h5>Consistency risk</h5>
+              <p>Scaling increases inconsistency if the programme relies on individual judgement and disconnected tools.</p>
+            </div>
+            <div class="doc-card">
+              <h5>Comparability risk</h5>
+              <p>Outputs are not yet guaranteed to be comparable across reviewers, startups, and cohorts.</p>
+            </div>
+            <div class="doc-card">
+              <h5>Efficiency risk</h5>
+              <p>Mentors risk carrying unnecessary administration unless the operating logic is clearly designed and standardised.</p>
+            </div>
+          </div>
+          <p>A formal model is needed before process drift becomes structural. The aim is not bureaucracy. The aim is repeatability, auditability, and low-friction execution.</p>
+        </section>
+
+        <section class="doc-section" id="exec-deliver">
+          <h3>What the project will deliver</h3>
+          <div class="doc-deliverable-grid">
+            <div class="doc-card"><h5>Unified operating model</h5><p>One end-to-end model with an Equity / Fast Track fork.</p></div>
+            <div class="doc-card"><h5>Controlled vocabulary</h5><p>One standard terminology set to reduce interpretation drift.</p></div>
+            <div class="doc-card"><h5>Mandatory template suite</h5><p>Standard workbooks, templates, and outputs for operational use.</p></div>
+            <div class="doc-card"><h5>KPI framework</h5><p>Balanced reporting across quality, speed, outcomes, and mentor efficiency.</p></div>
+            <div class="doc-card"><h5>Light automation readiness</h5><p>Future-ready data structures without committing to software build now.</p></div>
+            <div class="doc-card"><h5>HTML-ready reference structure</h5><p>Document architecture that can later support interactive step explanations.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="exec-scope">
+          <h3>Scope</h3>
+          <div class="doc-tablelike">
+            <div class="doc-key">Start point</div><div class="doc-value">Startup selected into the accelerator</div>
+            <div class="doc-key">End point</div><div class="doc-value">Investor facilitation completed</div>
+            <div class="doc-key">Target scale</div><div class="doc-value">Up to 20–30 startups per cohort</div>
+            <div class="doc-key">In scope</div><div class="doc-value">Process design, Equity Track, Fast Track, supporting tools, templates, workbooks, KPI layer, and light automation requirements</div>
+            <div class="doc-key">Out of scope</div><div class="doc-value">Full software build, deep integrations, investor CRM, and external mentor marketplace</div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="exec-reference">
+          <h3>Reference model</h3>
+          <p>The accompanying Accelerator Process Flow should be treated as the visual backbone of the project. The written proposal defines scope, intent, workstreams, and delivery logic. The flow defines the operating logic visually: shared entry, Equity Track, Fast Track, and downstream delivery paths.</p>
+          <p class="doc-note">Recommended reading order: Executive proposal → Process flow → Approval pack.</p>
+        </section>
+
+        <section class="doc-section" id="exec-decision">
+          <h3>Decision requested</h3>
+          <ul>
+            <li>Approve the project objective and scope</li>
+            <li>Approve development of the unified operating model</li>
+            <li>Approve creation of mandatory standard templates and workbooks</li>
+            <li>Approve phased delivery into detailed design</li>
+          </ul>
+          <div class="doc-callout">
+            <p><strong>Decision statement:</strong> Approved: The accelerator programme will initiate a project to design and implement a standardised, auditable, and scalable operating model, supported by mandatory templates and workbooks, covering the startup journey from programme entry to investor facilitation, with phased implementation and light future automation readiness.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PANEL 6: APPROVAL PACK ===================== -->
+<div id="p6" class="pnl">
+  <div class="doc-page">
+    <div class="doc-hero">
+      <div class="doc-kicker">Project approval pack</div>
+      <h2>Design and Implementation of a Standardised Accelerator Operating Model</h2>
+      <p class="subline">Executive proposal, scope definition, and HTML-ready reference structure. The pack is written as a greenfield operating-model project. Existing files and prototypes are treated as exploratory material, not as the approved model.</p>
+      <div class="doc-ref">
+        <span class="doc-pill">Unified model with early fork</span>
+        <span class="doc-pill">Mandatory templates</span>
+        <span class="doc-pill">Step-catalogue ready</span>
+        <span class="doc-pill">Future interactive HTML compatible</span>
+      </div>
+    </div>
+
+    <div class="doc-grid">
+      <aside class="doc-sidebar">
+        <h3>Contents</h3>
+        <a href="#pack-decision">Decision requested</a>
+        <a href="#pack-objective">Project objective</a>
+        <a href="#pack-principles">Design principles</a>
+        <a href="#pack-scope">Scope definition</a>
+        <a href="#pack-model">Target operating model</a>
+        <a href="#pack-deliverables">Core project deliverables</a>
+        <a href="#pack-workstreams">Workstreams</a>
+        <a href="#pack-phasing">Proposed phasing</a>
+        <a href="#pack-kpis">Success criteria and KPI framework</a>
+        <a href="#pack-risks">Risks and assumptions</a>
+        <a href="#pack-appendices">Appendix structure</a>
+      </aside>
+
+      <main class="doc-main">
+        <section class="doc-section" id="pack-decision">
+          <h3>Decision requested</h3>
+          <ul>
+            <li>Approve the project objective and scope</li>
+            <li>Approve development of one unified operating model with an Equity / Fast Track fork</li>
+            <li>Approve creation of mandatory standard templates and workbooks</li>
+            <li>Approve a phased delivery approach and progression into detailed design</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="pack-objective">
+          <h3>Project objective</h3>
+          <p>To design and implement a reusable accelerator operating model that standardises the startup journey from programme entry to investor facilitation, preserves consistency across reviewers, mentors, programme staff, and decision-makers, and minimises administrative burden, especially on mentors.</p>
+          <div class="doc-tablelike">
+            <div class="doc-key">Primary outcome</div><div class="doc-value">Standardised, auditable, scalable execution</div>
+            <div class="doc-key">Operating owner</div><div class="doc-value">Accelerator programme team</div>
+            <div class="doc-key">Main user groups</div><div class="doc-value">Startups, reviewers, mentors, programme managers, decision-makers</div>
+            <div class="doc-key">Unit of operation</div><div class="doc-value">Startup-level logic inside cohort-level constraints</div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="pack-principles">
+          <h3>Design principles</h3>
+          <div class="doc-workstream-grid">
+            <div class="doc-card"><h5>Standardised, not rigid</h5><p>Structured process with controlled flexibility and guided overrides.</p></div>
+            <div class="doc-card"><h5>Auditability by design</h5><p>Major decisions must be visible and defensible.</p></div>
+            <div class="doc-card"><h5>Low mentor administration</h5><p>Mentors focus on support, not process management.</p></div>
+            <div class="doc-card"><h5>Cohort-aware logic</h5><p>The model must work per startup and across the cohort.</p></div>
+            <div class="doc-card"><h5>Reusable model</h5><p>Suitable for future cohorts without redesign.</p></div>
+            <div class="doc-card"><h5>HTML-ready structure</h5><p>Documentation should support a future interactive reference layer.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="pack-scope">
+          <h3>Scope definition</h3>
+          <h4>In scope</h4>
+          <ul>
+            <li>End-to-end process from startup selected into programme to investor facilitation completed</li>
+            <li>Unified process design with a structured Equity / Fast Track fork</li>
+            <li>Supporting tools, templates, and workbooks</li>
+            <li>KPI and reporting structure</li>
+            <li>Light future automation requirements</li>
+          </ul>
+          <h4>Out of scope</h4>
+          <ul>
+            <li>Full software platform build</li>
+            <li>Deep automation or complex integrations</li>
+            <li>Investor CRM development</li>
+            <li>External mentor marketplace build</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="pack-model">
+          <h3>Target operating model</h3>
+          <p>The target model is one unified process with an early fork, supported by common data structures, mandatory templates, and a shared reporting layer.</p>
+          <h4>Shared entry layer</h4>
+          <ul>
+            <li>Startup selected into programme</li>
+            <li>Self-assessment</li>
+            <li>First 1:1 review</li>
+            <li>Common base data capture and startup profile foundation</li>
+          </ul>
+          <h4>Equity Track</h4>
+          <ul>
+            <li>Diagnosis of mentoring and support needs</li>
+            <li>Creation of startup demand profile and support package</li>
+            <li>Mentor supply standardisation and matching</li>
+            <li>Assignment, review, or gap handling</li>
+            <li>Mentoring delivery lifecycle</li>
+          </ul>
+          <h4>Fast Track</h4>
+          <ul>
+            <li>Investor-readiness pre-check</li>
+            <li>Evidence and DD / data-room requirements</li>
+            <li>Conditional remediation where gaps exist</li>
+            <li>Optional light support where justified</li>
+            <li>Investor facilitation handoff</li>
+          </ul>
+          <p class="doc-note">The process flow remains the visual backbone. This pack defines scope, standards, and delivery logic around that backbone.</p>
+        </section>
+
+        <section class="doc-section" id="pack-deliverables">
+          <h3>Core project deliverables</h3>
+          <div class="doc-deliverable-grid">
+            <div class="doc-card"><h5>Process architecture</h5><p>End-to-end process map, branch logic, and exception paths.</p></div>
+            <div class="doc-card"><h5>Controlled vocabulary</h5><p>Naming standard for process steps, outputs, and decision points.</p></div>
+            <div class="doc-card"><h5>Template suite</h5><p>Mandatory workbooks, registers, and operational forms.</p></div>
+            <div class="doc-card"><h5>KPI framework</h5><p>Balanced scorecard across quality, speed, outcomes, and efficiency.</p></div>
+            <div class="doc-card"><h5>Automation-ready requirements</h5><p>Future data structure and handoff requirements.</p></div>
+            <div class="doc-card"><h5>Structured appendix set</h5><p>Appendices designed to feed a future interactive HTML reference.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="pack-workstreams">
+          <h3>Workstreams</h3>
+          <div class="doc-workstream-grid">
+            <div class="doc-card"><h5>WS1. Operating model design</h5><p>Define the full target-state process and branch logic.</p></div>
+            <div class="doc-card"><h5>WS2. Template and workbook standardisation</h5><p>Create and lock the mandatory operating templates.</p></div>
+            <div class="doc-card"><h5>WS3. Mentoring system design</h5><p>Define diagnosis, matching, assignment, delivery, and review logic.</p></div>
+            <div class="doc-card"><h5>WS4. Fast Track and investor-readiness design</h5><p>Define readiness logic, evidence logic, remediation, and facilitation outputs.</p></div>
+            <div class="doc-card"><h5>WS5. Reporting and KPI layer</h5><p>Define how consistency and performance will be measured.</p></div>
+            <div class="doc-card"><h5>WS6. Light automation readiness</h5><p>Define the minimum future requirements for scaling without building software now.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="pack-phasing">
+          <h3>Proposed phasing</h3>
+          <div class="doc-phase-grid">
+            <div class="doc-card"><h5>Phase 1. Detailed design</h5><p>Approve the operating model, terminology, deliverables, template architecture, and KPI frame.</p></div>
+            <div class="doc-card"><h5>Phase 2. Tooling and template build</h5><p>Translate the approved model into operational workbooks and standard outputs.</p></div>
+            <div class="doc-card"><h5>Phase 3. Pilot and refinement</h5><p>Test the model on live cases and correct failure points.</p></div>
+            <div class="doc-card"><h5>Phase 4. Rollout</h5><p>Adopt the model as the standard operating system for future cohorts.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="pack-kpis">
+          <h3>Success criteria and KPI framework</h3>
+          <div class="doc-metric-grid">
+            <div class="doc-card"><h5>Process quality</h5><p>Consistency of structured outputs, defensibility of major decisions, and reduction in reviewer-driven variability.</p></div>
+            <div class="doc-card"><h5>Speed and efficiency</h5><p>Turnaround time from startup selection to first structured recommendation and onward decisions.</p></div>
+            <div class="doc-card"><h5>Startup outcomes</h5><p>Progression to support activation, investor-readiness, and investor facilitation.</p></div>
+            <div class="doc-card"><h5>Mentor efficiency</h5><p>Mentor time spent on support rather than administration, plus assignment quality and rework rate.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="pack-risks">
+          <h3>Risks and assumptions</h3>
+          <h4>Risks</h4>
+          <ul>
+            <li>The project grows beyond initial expectations. Response: phase the work and keep approval gates explicit.</li>
+            <li>The process becomes too complex. Response: keep the design operator-led and tool-backed.</li>
+            <li>Standardisation creates unnecessary overhead. Response: preserve controlled flexibility and low mentor admin.</li>
+          </ul>
+          <h4>Assumptions</h4>
+          <ul>
+            <li>Existing draft files are treated as exploratory material, not as the approved model.</li>
+            <li>The flowchart remains the visual backbone and is updated in parallel with the written scope.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="pack-appendices">
+          <h3>Appendix structure</h3>
+          <p>The pack is intentionally structured so it can later feed a richer HTML reference view without rewriting the underlying content.</p>
+          <div class="doc-deliverable-grid">
+            <div class="doc-card"><h5>Appendix A. Process Flow Reference</h5><p>Visual reference model for the target operating logic.</p></div>
+            <div class="doc-card"><h5>Appendix B. Step Catalogue</h5><p>One short entry per process box, suitable for future clickable HTML cards.</p></div>
+            <div class="doc-card"><h5>Appendix C. Decision Catalogue</h5><p>Separate structure for forks and diamonds with outcome-specific logic.</p></div>
+            <div class="doc-card"><h5>Appendix D. Deliverables and Templates Register</h5><p>Maps process steps to concrete outputs and operating files.</p></div>
+            <div class="doc-card"><h5>Appendix E. Controlled Vocabulary</h5><p>Reduces terminology drift across actors, cohorts, and future versions.</p></div>
+            <div class="doc-card"><h5>Future HTML role</h5><p>One visual object = one reference entry, keeping extension simple later.</p></div>
+          </div>
+          <div class="doc-callout" style="margin-top:1rem">
+            <p><strong>Approval framing:</strong> this project does not approve a software build. It approves the creation of the operating model and its practical toolset.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
+
+<script>
+var btns=document.querySelectorAll('.nav button'),pnls=document.querySelectorAll('.pnl');
+function go(i){btns.forEach(function(b){b.classList.remove('on')});pnls.forEach(function(p){p.classList.remove('on')});btns[i].classList.add('on');pnls[i].classList.add('on')}
+
+var eqData = {
+  "eq-04": {
+    label:"EQ-04 · Scored mentoring-need signal",
+    title:"4. Scored mentoring-need signal",
+    purpose:"Capture the startup’s primary and secondary support needs in a structured form.",
+    rationale:"This creates a comparable first signal before reviewer interpretation starts to shape the case.",
+    input:"Startup self-assessment responses, declared support needs, urgency, and intensity.",
+    output:"Structured mentoring-need signal that can be compared across startups.",
+    next:"Feeds the combined diagnosis with the reviewer signal at Step 6."
+  },
+  "eq-05": {
+    label:"EQ-05 · Context and reviewer signal",
+    title:"5. Context and reviewer signal",
+    purpose:"Add human interpretation to the startup’s self-declared needs.",
+    rationale:"Self-assessment alone can miss capability gaps, overstated claims, or strategic issues that emerge in discussion.",
+    input:"1:1 review observations, founder narrative, capability gaps, and reviewer judgement.",
+    output:"Reviewer-side signal that complements or challenges the startup’s own signal.",
+    next:"Compared with the scored need signal at Step 6."
+  },
+  "eq-06": {
+    label:"EQ-06 · Signals agree?",
+    title:"6. Signals agree?",
+    purpose:"Check whether the startup and reviewer are telling the same support story.",
+    rationale:"This is the control point that prevents hidden disagreement from flowing into mentor matching.",
+    input:"Structured need signal from Step 4 and contextual reviewer signal from Step 5.",
+    output:"Either alignment, or a need for conflict resolution.",
+    next:"Agree leads to the demand profile. Conflict leads to Step 7."
+  },
+  "eq-07": {
+    label:"EQ-07 · Conflict resolution",
+    title:"7. Conflict resolution",
+    purpose:"Resolve differences in how the startup’s support need is interpreted.",
+    rationale:"Standardisation fails if conflicting interpretations are pushed forward without resolution.",
+    input:"Conflicting signals on need priority, urgency, intensity, or mentor type.",
+    output:"Final working interpretation for the startup’s support need.",
+    next:"Returns to the flow and feeds the demand profile at Step 8."
+  },
+  "eq-08": {
+    label:"EQ-08 · Startup demand profile and package",
+    title:"8. Startup demand profile + package",
+    purpose:"Translate diagnosis into a standard support object that can drive matching and delivery.",
+    rationale:"This is the bridge between startup assessment and mentor selection. Without it, matching stays subjective.",
+    input:"Resolved need interpretation, urgency, intensity, mentor type, and startup priority.",
+    output:"Demand profile plus a proposed package level such as Lite, Core, or Intensive.",
+    next:"Feeds budget logic, then the mentor supply and matching stages."
+  },
+  "eq-budget": {
+    label:"EQ-BUDGET · Budget mode",
+    title:"Budget mode?",
+    purpose:"Define whether matching decisions are constrained at startup level or at cohort level.",
+    rationale:"Matching should remain fit-first, but budget rules still need to be explicit before shortlists are built.",
+    input:"Approved programme budget logic and package assumptions.",
+    output:"Working budget mode for downstream matching.",
+    next:"Feeds the supply-side and matching stages."
+  },
+  "eq-09": {
+    label:"EQ-09 · Mentor database",
+    title:"9. Mentor database",
+    purpose:"Provide the raw supply pool of available mentors.",
+    rationale:"A shared supply pool is necessary, but raw data alone is too uneven for auditable matching.",
+    input:"Mentor intake data, profiles, availability, fees, and background information.",
+    output:"Source dataset for mentor standardisation.",
+    next:"Feeds the standardised mentor supply profile at Step 10."
+  },
+  "eq-10": {
+    label:"EQ-10 · Standardised mentor supply profile",
+    title:"10. Standardised mentor supply profile",
+    purpose:"Normalise mentor information into comparable matching criteria.",
+    rationale:"Standardisation on the supply side is what makes matching defendable across reviewers and cohorts.",
+    input:"Raw mentor data from the mentor database.",
+    output:"Normalised mentor profiles with expertise, sector, stage, style, capacity, and confidence.",
+    next:"Feeds the matching engine starting at Step 11A."
+  },
+  "eq-11a": {
+    label:"EQ-11A · Candidate fit ranking",
+    title:"11A. Candidate fit ranking",
+    purpose:"Rank mentors against the startup’s demand profile.",
+    rationale:"The first shortlist should be driven by fit, not by convenience or reviewer preference.",
+    input:"Startup demand profile and standardised mentor supply profile.",
+    output:"Initial ranked candidate set.",
+    next:"Moves into feasibility filtering at Step 11B."
+  },
+  "eq-11b": {
+    label:"EQ-11B · Feasibility filter",
+    title:"11B. Feasibility filter",
+    purpose:"Remove options that are not workable in practice.",
+    rationale:"A good theoretical fit is not enough if capacity, affordability, or conflicts block execution.",
+    input:"Ranked candidate set plus constraints such as capacity, budget, and conflicts.",
+    output:"Feasible candidate pool.",
+    next:"Moves into assignment boundary checks at Step 11C."
+  },
+  "eq-11c": {
+    label:"EQ-11C · Assignment boundary filter",
+    title:"11C. Assignment boundary filter",
+    purpose:"Apply programme rules before finalising the shortlist.",
+    rationale:"This is where the model protects itself from over-engineering, over-allocation, or ad hoc exceptions.",
+    input:"Feasible candidate pool plus assignment rules such as lead mentor limits and fit thresholds.",
+    output:"Compliant candidate set.",
+    next:"Feeds the ranked shortlist output at Step 11D."
+  },
+  "eq-11d": {
+    label:"EQ-11D · Ranked shortlist output",
+    title:"11D. Ranked shortlist output",
+    purpose:"Produce the decision-ready shortlist or signal that no acceptable option exists.",
+    rationale:"This is the operational handoff from the matching engine into assignment logic.",
+    input:"Filtered and compliant candidate options.",
+    output:"Ranked shortlist, or a no-match outcome.",
+    next:"Feeds the assign / review / gap decision at Step 12."
+  },
+  "eq-12": {
+    label:"EQ-12 · Assign / review / gap",
+    title:"12. Assign / review / gap",
+    purpose:"Choose the practical path forward based on match quality.",
+    rationale:"The system needs a controlled way to separate strong assignments from cases needing review or gap handling.",
+    input:"Ranked shortlist and match quality judgement.",
+    output:"One of three paths: assign, review, or gap handling.",
+    next:"Strong goes to assignment. Medium goes to manual review. Weak goes to gap handling."
+  },
+  "eq-assign": {
+    label:"EQ-ASSIGN · Assign mentor",
+    title:"Assign mentor → Step 13",
+    purpose:"Convert a strong match into a formal handoff to mentoring delivery.",
+    rationale:"A strong match should move quickly into execution without reopening the diagnosis stage.",
+    input:"Selected mentor, package, scope, objectives, and approved working assumptions.",
+    output:"Handoff package for mentoring delivery.",
+    next:"Continues into Step 13 in the Mentoring delivery panel."
+  },
+  "eq-review": {
+    label:"EQ-REVIEW · Review call",
+    title:"Review call",
+    purpose:"Use manual judgement when the shortlist is promising but not decisive.",
+    rationale:"Some cases need a human decision rather than a purely mechanical outcome.",
+    input:"Medium-strength shortlist and any unresolved contextual considerations.",
+    output:"Decision to assign, rescope and rerun, or move into gap handling.",
+    next:"Can lead to assignment, reranking from 11A, or gap handling."
+  },
+  "eq-gap": {
+    label:"EQ-GAP · Gap handling",
+    title:"Gap handling",
+    purpose:"Handle cases where no acceptable mentor match exists.",
+    rationale:"A transparent no-match path is better than forcing a low-quality assignment.",
+    input:"Weak or no-match shortlist outcome.",
+    output:"Decision on search, substitute, deferment, or alternate support.",
+    next:"Can trigger external search, good-enough substitute, or defer / alternate support."
+  },
+  "eq-search": {
+    label:"EQ-SEARCH · External search?",
+    title:"External search?",
+    purpose:"Decide whether a no-match case justifies searching outside the current mentor pool.",
+    rationale:"External search should be selective, not routine, otherwise the system becomes slow and expensive.",
+    input:"Gap case priority and criticality of the missing support need.",
+    output:"Yes or no on external sourcing.",
+    next:"Yes leads to external mentor search. No leads to substitute or defer pathways."
+  },
+  "eq-external": {
+    label:"EQ-EXTERNAL · External mentor search",
+    title:"External mentor search",
+    purpose:"Look beyond the internal mentor pool when the need is both high priority and critical.",
+    rationale:"This keeps the model pragmatic while preserving a route for strategically important exceptions.",
+    input:"Approved external-search decision.",
+    output:"New candidate search outside the existing supply pool.",
+    next:"Returns to the matching logic once a credible external option is identified."
+  },
+  "eq-substitute": {
+    label:"EQ-SUBSTITUTE · Good-enough substitute",
+    title:"Good-enough substitute",
+    purpose:"Provide a workable support option when the ideal mentor is unavailable.",
+    rationale:"Some support is better than delay, provided the substitute is transparent and reasonable.",
+    input:"No-external-search path plus available near-fit alternatives.",
+    output:"Substitute support path.",
+    next:"Moves forward with a controlled compromise rather than a perfect-fit match."
+  },
+  "eq-defer": {
+    label:"EQ-DEFER · Defer / alternate support",
+    title:"Defer / alt. support",
+    purpose:"Pause mentoring assignment or redirect the startup to another support form.",
+    rationale:"Not every no-match case should force a mentor decision. Sometimes timing or support mode is the issue.",
+    input:"No-search path plus lack of acceptable substitute.",
+    output:"Deferred assignment or alternative support recommendation.",
+    next:"Wait, revisit later, or redirect to another support mechanism."
+  }
+};
+
+var ftData = {
+  "ft-01": {
+    label:"FT-01 · Readiness pre-check",
+    title:"F1. Readiness pre-check",
+    purpose:"Assess whether the startup is realistically close to investor matching, not whether it would benefit from mentoring in general.",
+    rationale:"Fast Track should stay focused on investor-readiness. Without that discipline, it becomes a second mentoring track.",
+    input:"Self-assessment, 1:1 review, and the stage-based readiness matrix.",
+    output:"Working readiness view for the startup.",
+    next:"Feeds the readiness decision at F2."
+  },
+  "ft-02": {
+    label:"FT-02 · Readiness decision",
+    title:"F2. Readiness decision",
+    purpose:"Decide whether the startup is ready, conditionally ready, or not ready for investor matching.",
+    rationale:"This is the core control point of Fast Track. It keeps the path focused on evidence and readiness, not optimism.",
+    input:"Pre-check findings from F1.",
+    output:"One of three paths: Fit, Conditional, or Does not fit.",
+    next:"Fit moves to data-room preparation. Conditional moves to gap closure. Does not fit moves to rerouting, wait, or stop."
+  },
+  "ft-03": {
+    label:"FT-03 · Fit — ready",
+    title:"F3. Fit — ready",
+    purpose:"Confirm that investor matching is realistic and the startup can move into evidence preparation.",
+    rationale:"This keeps Fast Track moving when the startup already meets the practical threshold.",
+    input:"Positive readiness decision.",
+    output:"Approved move into data-room and investor-facilitation preparation.",
+    next:"Collect data room, verify artifacts, then build the investment pack."
+  },
+  "ft-collect": {
+    label:"FT-COLLECT · Collect data room",
+    title:"Collect data room",
+    purpose:"Gather the core documents and evidence needed for investor-facing review.",
+    rationale:"A startup can look ready in conversation but still fail if the evidence base is missing or fragmented.",
+    input:"Fit outcome plus the expected diligence material list.",
+    output:"Collected startup data-room material.",
+    next:"Moves to artifact verification."
+  },
+  "ft-verify": {
+    label:"FT-VERIFY · Verify artifacts",
+    title:"Verify artifacts",
+    purpose:"Check whether the submitted material is complete, credible, and usable.",
+    rationale:"Fast Track should not pass unverified startup claims directly into investor-facing outputs.",
+    input:"Data-room documents and supporting evidence.",
+    output:"Verified artifact set, or identified weaknesses needing correction.",
+    next:"Feeds the investment pack."
+  },
+  "ft-pack": {
+    label:"FT-PACK · Investment pack",
+    title:"Investment pack",
+    purpose:"Translate verified startup material into a concise investor-facilitation output.",
+    rationale:"The programme needs a standard investor-facing package, not a loose collection of files.",
+    input:"Verified artifacts and programme framing.",
+    output:"Investor-facing pack for matching and facilitation.",
+    next:"Feeds investor matching."
+  },
+  "ft-match": {
+    label:"FT-MATCH · Investor matching",
+    title:"Investor matching",
+    purpose:"Use the prepared material in active investor facilitation.",
+    rationale:"This is the commercial end point of the Fast Track path once the startup is ready.",
+    input:"Investment pack and confirmed readiness.",
+    output:"Investor matching activity.",
+    next:"Continues outside this diagram into live facilitation."
+  },
+  "ft-04": {
+    label:"FT-04 · Missing items identified",
+    title:"F4. Missing items ID'd",
+    purpose:"Define exactly what is missing before investor matching can be credible.",
+    rationale:"Conditional cases need specific gap statements. Otherwise remediation becomes vague and hard to manage.",
+    input:"Conditional readiness decision.",
+    output:"Defined gap list and remediation needs.",
+    next:"Moves into either startup self-remediation or paid support."
+  },
+  "ft-05a": {
+    label:"FT-05A · Startup delivers",
+    title:"F5a. Startup delivers",
+    purpose:"Allow the startup to close missing items itself within a defined remediation path.",
+    rationale:"Not every gap should trigger paid support. Some can be resolved directly by the founder team.",
+    input:"Gap list from F4 and startup-owned remediation work.",
+    output:"Submitted evidence or corrected material.",
+    next:"Returns to the recheck at F6."
+  },
+  "ft-05b": {
+    label:"FT-05B · Paid support",
+    title:"F5b. Paid support",
+    purpose:"Provide targeted support where a startup cannot independently close critical Fast Track gaps.",
+    rationale:"This is the high-level commercial remediation path. It should be available, but not be the automatic default for every case.",
+    input:"Gap list from F4 plus decision to offer support services.",
+    output:"Supported remediation work and improved readiness material.",
+    next:"Returns to the recheck at F6."
+  },
+  "ft-06": {
+    label:"FT-06 · Recheck readiness",
+    title:"F6. Recheck readiness",
+    purpose:"Reassess whether the startup now meets the Fast Track threshold.",
+    rationale:"Both remediation routes need to converge into one controlled readiness test.",
+    input:"New evidence from startup-led fixes or paid support.",
+    output:"Updated readiness judgement.",
+    next:"If threshold is met, the startup returns to the Fit path. If not, it remains unresolved."
+  },
+  "ft-07": {
+    label:"FT-07 · Does not fit",
+    title:"F7. Does not fit",
+    purpose:"Handle cases where Fast Track is not justified at the current stage.",
+    rationale:"A transparent no-fit path protects investor-facing quality and avoids pushing premature startups into the wrong track.",
+    input:"Negative readiness decision or failed remediation.",
+    output:"Choice among reroute, wait, or stop.",
+    next:"Can move the startup to Equity Track, place it in wait, or drop the case."
+  },
+  "ft-equity": {
+    label:"FT-EQUITY · Move to Equity Track",
+    title:"Move to Equity Track",
+    purpose:"Reroute the startup into the support path when investor-readiness is premature but the case is still viable.",
+    rationale:"Fast Track and Equity Track should connect cleanly. Not-fit does not always mean no potential.",
+    input:"No-fit outcome with a case for further support.",
+    output:"Cross-track handoff into Equity diagnosis.",
+    next:"Returns to the Equity Track start."
+  },
+  "ft-wait": {
+    label:"FT-WAIT · Wait",
+    title:"Wait",
+    purpose:"Pause progression without closing the case entirely.",
+    rationale:"Some startups are not ready now but should not yet be rerouted or dropped.",
+    input:"No-fit outcome with a reason to revisit later.",
+    output:"Paused status.",
+    next:"Revisit when more evidence, maturity, or traction exists."
+  },
+  "ft-drop": {
+    label:"FT-DROP · Drop",
+    title:"Drop",
+    purpose:"End the Fast Track path where the case is not viable for continuation.",
+    rationale:"The model needs an explicit stop option to avoid artificial carry-forward of weak cases.",
+    input:"No-fit outcome with no sufficient basis for reroute or wait.",
+    output:"Stopped case.",
+    next:"No further progression in the current process."
+  }
+};
+
+var mdData = {
+  "md-input": {label:"MD-IN · Input from matching engine", title:"Input from matching engine", purpose:"Carry the selected mentor and support package into delivery as a clean handoff object.", rationale:"Delivery should not restart the case from scratch. It should begin from a structured assignment package that already defines mentor, scope, and expected outcomes.", input:"Selected mentor, package tier, hour budget, objective, scope, expected outcomes, and co-support flag.", output:"Configured delivery input for the mentoring lifecycle.", next:"Feeds the mentoring mandate at Step 13."},
+  "md-13": {label:"MD-13 · Mentoring mandate", title:"13. Mentoring mandate (configured)", purpose:"Convert the matching output into a working engagement frame.", rationale:"A match only becomes operational when topic, cadence, hours, scope, and success criteria are made explicit.", input:"Structured handoff from the matching engine plus package and hour boundaries.", output:"Agreed mentoring mandate with clear delivery parameters.", next:"Moves into kickoff and scope alignment at Step 14."},
+  "md-14": {label:"MD-14 · Kickoff / scope alignment", title:"14. Kickoff / scope alignment", purpose:"Align startup and mentor on what the work will actually cover.", rationale:"This avoids silent mismatch between what the startup expects and what the mentor is there to do.", input:"Configured mentoring mandate and the startup's current priorities.", output:"Shared understanding of problem definition, scope boundaries, and expected startup contribution.", next:"Starts the repeating mentoring session cycle at Step 15."},
+  "md-15": {label:"MD-15 · Mentoring sessions", title:"15. Mentoring sessions + task follow-up", purpose:"Run the actual support cycle through sessions, actions, and progress checks.", rationale:"Value is created in the repeated loop of guidance, execution, and follow-up, not in a single meeting.", input:"Agreed mandate, active startup blockers, and remaining hour budget.", output:"Session outputs, tasks, deadlines, progress evidence, and updated hour usage.", next:"Loops until the working-fit check or an hour/goal trigger moves the case forward."},
+  "md-16": {label:"MD-16 · Working fit / startup feedback", title:"16. Working fit / startup feedback", purpose:"Check whether the mentor-startup relationship is functioning well enough to continue.", rationale:"Expertise alone is not enough. Chemistry, communication quality, and usefulness affect whether mentoring actually works.", input:"Startup feedback plus observed working dynamics from the current cycle.", output:"Good fit, adjust-and-keep, or replace/reassign signal.", next:"Good fit continues forward. Adjust returns to sessions. Poor fit triggers intervention."},
+  "md-adjust": {label:"MD-16A · Adapt scope, keep mentor", title:"Adapt scope, keep mentor", purpose:"Correct delivery issues without changing the mentor relationship.", rationale:"Many mentoring problems come from scope or working method rather than a bad mentor fit.", input:"Fit check showing a usable relationship but a misaligned scope, format, or cadence.", output:"Reframed engagement with the same mentor.", next:"Returns to the active session cycle."},
+  "md-reassign": {label:"MD-16B · Replace / reassign", title:"Replace / reassign", purpose:"Intervene when the current mentor relationship is not working well enough to continue.", rationale:"The operating model needs a clean correction path when the delivery relationship is poor.", input:"Poor-fit outcome from startup feedback or programme observation.", output:"Reassignment, replacement, or justified specialist addition.", next:"Returns upstream to reconfigure the mandate before sessions continue."},
+  "md-17": {label:"MD-17 · Stage gate review", title:"17. Stage gate review", purpose:"Assess whether the support cycle is producing enough progress to justify the next move.", rationale:"The model needs a formal reflection point that combines startup progress, mentor recommendation, and programme judgement.", input:"Completed tasks, progress evidence, mentor recommendation, and programme view.", output:"Structured gate review of current readiness and support need.", next:"Feeds the gate outcome decision."},
+  "md-gate": {label:"MD-17A · Gate outcome", title:"Gate outcome?", purpose:"Decide whether the startup is ready, needs more support, or requires intervention.", rationale:"This is the control point that stops mentoring from drifting without a decision.", input:"Stage gate review conclusions from Step 17.", output:"Ready, more support, or not-ready pathway.", next:"Ready moves to cycle close. More support returns to sessions. Not ready triggers intervention."},
+  "md-continue-sessions": {label:"MD-17B · Continue sessions", title:"Continue sessions", purpose:"Extend the mentoring cycle when the startup is progressing but needs more work.", rationale:"Not every case should be forced to close at the first gate if targeted support can still create value.", input:"Gate outcome showing more support is justified.", output:"Continued mentoring cycle with a clear rationale.", next:"Returns to sessions and follow-up."},
+  "md-intervene": {label:"MD-17C · Intervene / change", title:"Intervene / change", purpose:"Escalate when the current support design is not producing the required result.", rationale:"The system needs a corrective path for cases that are not yet viable in their current form.", input:"Not-ready gate outcome.", output:"Decision to change scope, structure, mentor, or support configuration.", next:"Returns upstream to reconfigure the mandate and delivery setup."},
+  "md-18": {label:"MD-18 · Cycle close / next-step decision", title:"18. Cycle close / next-step decision", purpose:"Close the current mentoring cycle and determine the most appropriate onward path.", rationale:"Delivery needs an explicit close or transition point so hours, outcomes, and next actions stay visible.", input:"Goal completion, hour exhaustion, or programme decision after the gate.", output:"One of four closure pathways: close, continue, new support, or move on.", next:"Routes the startup into the relevant closure or continuation path."},
+  "md-close": {label:"MD-18A · Close", title:"Close", purpose:"Finish the mentoring cycle because the agreed support objective has been completed.", rationale:"A clean close protects mentor capacity and makes outcomes explicit.", input:"Successful completion or justified closure decision.", output:"Closed mentoring cycle with completed outcome.", next:"Startup exits this delivery cycle."},
+  "md-continue": {label:"MD-18B · Continue", title:"Continue", purpose:"Carry the existing support cycle forward without redesigning it.", rationale:"Some startups need more time in the same support track rather than a fresh intervention.", input:"Cycle close review showing continued value in the current setup.", output:"Extended current mentoring cycle.", next:"Loops back into the configured mandate and sessions."},
+  "md-new": {label:"MD-18C · New support", title:"New support", purpose:"Start a new support cycle because the startup now needs a different form of help.", rationale:"The next problem to solve may require a different mentor, package, or support logic.", input:"Cycle close review showing a new support need rather than a simple continuation.", output:"Decision to initiate a new support configuration.", next:"Returns upstream to mandate setup with a revised support design."},
+  "md-moveon": {label:"MD-18D · Move on", title:"Move on", purpose:"End the current support relationship without opening a new cycle immediately.", rationale:"Not every startup needs continuous mentoring once a cycle ends.", input:"Cycle close review showing no immediate need for continued support.", output:"Startup moves beyond the current mentoring cycle.", next:"Leaves this delivery flow unless a later trigger reopens support."}
+};
+
+var ovData = {
+  "ov-01": {label:"OV-01 · Self-assessment", title:"1. Self-assessment", purpose:"Start every startup from the same structured intake point.", rationale:"This creates a comparable baseline before reviewer interpretation or branching begins.", input:"Startup responses, scores, and structured comments.", output:"Standardised startup input record.", next:"Feeds the shared input layer together with the first 1:1 session."},
+  "ov-02": {label:"OV-02 · First 1:1 session", title:"2. First 1:1 session", purpose:"Add reviewer context and validate what the startup submitted.", rationale:"The model needs both structured startup input and live reviewer interpretation before routing decisions are made.", input:"Self-assessment and review discussion.", output:"Contextual reviewer observations.", next:"Joins the self-assessment in the path decision."},
+  "ov-03": {label:"OV-03 · Path decision", title:"3. Path", purpose:"Split the model into the support path or the investor-readiness path.", rationale:"The accelerator needs one shared operating model, but not every startup should follow the same downstream route.", input:"Combined intake and 1:1 evidence.", output:"Equity Track or Fast Track progression.", next:"Routes the startup into the relevant branch."},
+  "ov-eq-04": {label:"OV-EQ-04 · Scored need signal", title:"4. Scored need signal", purpose:"Capture the startup’s declared mentoring need in a standard form.", rationale:"This keeps Equity Track grounded in comparable startup-side input.", input:"Self-assessment support needs.", output:"Structured need signal.", next:"Compared with reviewer context."},
+  "ov-eq-05": {label:"OV-EQ-05 · Context + reviewer", title:"5. Context + reviewer", purpose:"Add reviewer judgement to the startup-side need signal.", rationale:"Support design should not rely only on self-declaration.", input:"1:1 context and reviewer observations.", output:"Reviewer-side interpretation.", next:"Feeds the agreement check."},
+  "ov-eq-06": {label:"OV-EQ-06 · Agree?", title:"6. Agree?", purpose:"Check whether startup and reviewer are aligned on the support story.", rationale:"This is the control point that stops misread needs from flowing straight into matching.", input:"Startup and reviewer signals.", output:"Agreement or conflict.", next:"Conflict goes to resolution. Agreement goes to the demand profile."},
+  "ov-eq-07": {label:"OV-EQ-07 · Conflict resolution", title:"7. Conflict resolution", purpose:"Resolve differences before matching starts.", rationale:"Standardisation fails if conflicting interpretations are carried forward unresolved.", input:"Conflicting need interpretation.", output:"Final working support view.", next:"Feeds the demand profile."},
+  "ov-eq-08": {label:"OV-EQ-08 · Demand profile + package", title:"8. Demand profile + package", purpose:"Create the standard support object for the startup.", rationale:"This is the bridge between diagnosis and mentor matching.", input:"Resolved need interpretation, urgency, intensity, and package logic.", output:"Startup demand profile.", next:"Feeds supply-side matching."},
+  "ov-eq-09": {label:"OV-EQ-09 · Mentor database", title:"9. Mentor database", purpose:"Provide the raw pool of mentor supply.", rationale:"The programme needs one shared source pool before standardisation and matching can happen.", input:"Mentor intake and availability.", output:"Raw mentor pool.", next:"Feeds the supply profile."},
+  "ov-eq-10": {label:"OV-EQ-10 · Mentor supply profile", title:"10. Mentor supply profile", purpose:"Normalise mentor information into comparable matching criteria.", rationale:"Matching becomes auditable only when mentor data is standardised.", input:"Raw mentor data.", output:"Comparable supply profile.", next:"Feeds the shortlist logic."},
+  "ov-eq-11": {label:"OV-EQ-11 · Ranked shortlist", title:"11. Ranked shortlist", purpose:"Produce the best-fit mentor options after matching rules are applied.", rationale:"The model should recommend options through fit-first logic rather than ad hoc selection.", input:"Demand profile and supply profile.", output:"Shortlist of mentor options.", next:"Moves into assign, review, or gap handling."},
+  "ov-eq-12": {label:"OV-EQ-12 · Assign / review / gap", title:"12. Assign / review / gap", purpose:"Choose the practical path forward based on match quality.", rationale:"This separates straightforward assignments from cases that need judgement or exception handling.", input:"Shortlist and match quality.", output:"Assignment path, review path, or gap path.", next:"Strong matches move into delivery. Weak ones move into gap handling."},
+  "ov-eq-13": {label:"OV-EQ-13 · Mentoring delivery", title:"13–18. Mentoring delivery", purpose:"Run the assigned mentoring work through mandate, sessions, fit checks, and stage gates.", rationale:"The overview keeps delivery collapsed into one block because the operational detail sits in its own panel.", input:"Assigned mentor and support package.", output:"Delivered mentoring cycle and progression outcome.", next:"Use the Mentoring delivery tab for the full lifecycle."},
+  "ov-ft-01": {label:"OV-FT-01 · Readiness pre-check", title:"F1. Readiness pre-check", purpose:"Test whether a startup should enter investor-readiness work at all.", rationale:"Fast Track should stay focused on investor-facing readiness, not broad support delivery.", input:"Stage logic, startup evidence, and reviewer input.", output:"Preliminary readiness view.", next:"Feeds the readiness decision."},
+  "ov-ft-02": {label:"OV-FT-02 · Readiness decision", title:"F2. Readiness decision", purpose:"Choose whether the startup is fit, conditional, or not fit for Fast Track.", rationale:"This is the main control point of the investor-readiness branch.", input:"Pre-check result.", output:"Fit, Conditional, or Does not fit.", next:"Routes the startup into the relevant Fast Track outcome."},
+  "ov-ft-03": {label:"OV-FT-03 · Fit — ready", title:"F3. Fit — ready", purpose:"Confirm that the startup can move into investor-facing preparation.", rationale:"The branch should move quickly when readiness is already strong enough.", input:"Positive readiness decision.", output:"Approved Fast Track progression.", next:"Moves into data-room collection and verification."},
+  "ov-ft-collect": {label:"OV-FT-COLLECT · Collect data room", title:"Collect data room", purpose:"Gather the evidence base needed for investor facilitation.", rationale:"Investor-facing work depends on structured, accessible startup materials.", input:"Fast Track fit outcome.", output:"Collected diligence material.", next:"Moves to verification and pack building."},
+  "ov-ft-04": {label:"OV-FT-04 · Missing items", title:"F4. Missing items", purpose:"Define what is missing when the startup is not yet fully ready.", rationale:"Conditional cases need explicit gap statements rather than vague readiness concerns.", input:"Conditional readiness outcome.", output:"Gap list and remediation needs.", next:"Moves to self-fix or paid support."},
+  "ov-ft-05a": {label:"OV-FT-05A · Startup delivers", title:"F5a. Startup delivers", purpose:"Let the startup close missing items itself.", rationale:"Some Fast Track gaps are best resolved directly by the founder team.", input:"Gap list and startup remediation work.", output:"Updated evidence.", next:"Returns to recheck."},
+  "ov-ft-05b": {label:"OV-FT-05B · Paid support", title:"F5b. Paid support", purpose:"Provide targeted support where gaps cannot be closed independently.", rationale:"The model allows commercial remediation at a high level without making it the default.", input:"Gap list and support decision.", output:"Supported remediation output.", next:"Returns to recheck."},
+  "ov-ft-06": {label:"OV-FT-06 · Recheck", title:"F6. Recheck", purpose:"Retest whether the startup now meets the Fast Track threshold.", rationale:"Both remediation paths should converge into one readiness control point.", input:"Updated evidence after remediation.", output:"Revised readiness view.", next:"Either return to fit or remain unresolved."},
+  "ov-ft-07": {label:"OV-FT-07 · No fit", title:"F7. No fit", purpose:"Handle cases where Fast Track is not currently justified.", rationale:"The model needs an explicit no-fit path to protect investor-facing quality.", input:"Negative readiness decision or failed remediation.", output:"Choice among reroute, wait, or stop.", next:"Moves to Equity, wait, or drop."},
+  "ov-ft-equity": {label:"OV-FT-EQUITY · Move to Equity", title:"Move to Equity Track", purpose:"Reroute a startup into the support path when investor-readiness is premature.", rationale:"Not-fit does not always mean no potential. It may simply mean the wrong route at the current stage.", input:"No-fit case with support potential.", output:"Cross-track handoff to Equity.", next:"Returns to the Equity Track diagnosis."},
+  "ov-ft-wait": {label:"OV-FT-WAIT · Wait", title:"Wait", purpose:"Pause the case without closing it.", rationale:"Some startups need time rather than immediate support or closure.", input:"No-fit case worth revisiting later.", output:"Paused status.", next:"Revisit when the startup matures."},
+  "ov-ft-drop": {label:"OV-FT-DROP · Drop", title:"Drop", purpose:"End the branch where there is no sufficient basis to continue.", rationale:"An explicit stop outcome protects discipline in the operating model.", input:"No-fit case with no viable continuation path.", output:"Closed case.", next:"No further progression in the current process."}
+};
+
+var ovPanel = document.getElementById('ov-panel');
+if(ovPanel){
+  var ovTitleEl = document.getElementById('ov-panel-title');
+  var ovMetaEl = document.getElementById('ov-panel-meta');
+  var ovLeadEl = document.getElementById('ov-panel-lead');
+  var ovPurposeEl = document.getElementById('ov-panel-purpose');
+  var ovRationaleEl = document.getElementById('ov-panel-rationale');
+  var ovInputEl = document.getElementById('ov-panel-input');
+  var ovOutputEl = document.getElementById('ov-panel-output');
+  var ovNextEl = document.getElementById('ov-panel-next');
+  var ovHotspots = document.querySelectorAll('.ov-hotspot');
+
+  function activateOvHotspot(el){
+    ovHotspots.forEach(function(h){h.classList.remove('active')});
+    if(el){ el.classList.add('active'); }
+  }
+
+  function renderOvStep(key, el){
+    var step = ovData[key];
+    if(!step) return;
+    ovTitleEl.textContent = step.title;
+    ovMetaEl.textContent = step.label;
+    ovLeadEl.textContent = "Short reference view for the selected Full overview process element.";
+    ovPurposeEl.textContent = step.purpose;
+    ovRationaleEl.textContent = step.rationale;
+    ovInputEl.textContent = step.input;
+    ovOutputEl.textContent = step.output;
+    ovNextEl.textContent = step.next;
+    activateOvHotspot(el);
+  }
+
+  ovHotspots.forEach(function(h){
+    h.addEventListener('click', function(){ renderOvStep(h.getAttribute('data-step'), h); });
+    h.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); renderOvStep(h.getAttribute('data-step'), h); }
+    });
+    h.setAttribute('tabindex','0');
+    h.setAttribute('role','button');
+    var stepId = h.getAttribute('data-step');
+    if(ovData[stepId]){ h.setAttribute('aria-label', ovData[stepId].title); }
+  });
+}
+
+
+function setupDocNav(panelId){
+  var panel = document.getElementById(panelId);
+  if(!panel) return;
+  var links = Array.prototype.slice.call(panel.querySelectorAll('.doc-sidebar a[href^="#"]'));
+  var sections = links.map(function(link){
+    var id = link.getAttribute('href').slice(1);
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if(!links.length || !sections.length) return;
+
+  function clearActive(){ links.forEach(function(l){ l.classList.remove('active'); }); }
+  function setActive(id){
+    clearActive();
+    var link = panel.querySelector('.doc-sidebar a[href="#'+id+'"]');
+    if(link){ link.classList.add('active'); }
+  }
+  function stickyOffset(){
+    var nav = document.querySelector('.nav');
+    return (nav ? nav.getBoundingClientRect().height : 0) + 26;
+  }
+  links.forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var id = link.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if(!target) return;
+      var top = window.pageYOffset + target.getBoundingClientRect().top - stickyOffset();
+      window.scrollTo({top: top, behavior: 'smooth'});
+      setActive(id);
+    });
+  });
+
+  function updateActiveFromScroll(){
+    if(!panel.classList.contains('on')) return;
+    var offset = stickyOffset() + 24;
+    var current = sections[0].id;
+    sections.forEach(function(sec){
+      if(sec.getBoundingClientRect().top - offset <= 0){ current = sec.id; }
+    });
+    setActive(current);
+  }
+  window.addEventListener('scroll', updateActiveFromScroll, {passive:true});
+  window.addEventListener('resize', updateActiveFromScroll);
+  updateActiveFromScroll();
+}
+
+setupDocNav('p5');
+setupDocNav('p6');
+
+var eqPanel = document.getElementById('eq-panel');
+if(eqPanel){
+  var titleEl = document.getElementById('eq-panel-title');
+  var metaEl = document.getElementById('eq-panel-meta');
+  var leadEl = document.getElementById('eq-panel-lead');
+  var purposeEl = document.getElementById('eq-panel-purpose');
+  var rationaleEl = document.getElementById('eq-panel-rationale');
+  var inputEl = document.getElementById('eq-panel-input');
+  var outputEl = document.getElementById('eq-panel-output');
+  var nextEl = document.getElementById('eq-panel-next');
+  var hotspots = document.querySelectorAll('.eq-hotspot');
+
+  function activateHotspot(el){
+    hotspots.forEach(function(h){h.classList.remove('active')});
+    if(el){ el.classList.add('active'); }
+  }
+
+  function renderEqStep(key, el){
+    var step = eqData[key];
+    if(!step) return;
+    titleEl.textContent = step.title;
+    metaEl.textContent = step.label;
+    leadEl.textContent = "Short reference view for the selected Equity Track process element.";
+    purposeEl.textContent = step.purpose;
+    rationaleEl.textContent = step.rationale;
+    inputEl.textContent = step.input;
+    outputEl.textContent = step.output;
+    nextEl.textContent = step.next;
+    activateHotspot(el);
+  }
+
+  hotspots.forEach(function(h){
+    h.addEventListener('click', function(){ renderEqStep(h.getAttribute('data-step'), h); });
+    h.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); renderEqStep(h.getAttribute('data-step'), h); }
+    });
+    h.setAttribute('tabindex','0');
+    h.setAttribute('role','button');
+    var stepId = h.getAttribute('data-step');
+    if(eqData[stepId]){ h.setAttribute('aria-label', eqData[stepId].title); }
+  });
+}
+
+var ftPanel = document.getElementById('ft-panel');
+if(ftPanel){
+  var ftTitleEl = document.getElementById('ft-panel-title');
+  var ftMetaEl = document.getElementById('ft-panel-meta');
+  var ftLeadEl = document.getElementById('ft-panel-lead');
+  var ftPurposeEl = document.getElementById('ft-panel-purpose');
+  var ftRationaleEl = document.getElementById('ft-panel-rationale');
+  var ftInputEl = document.getElementById('ft-panel-input');
+  var ftOutputEl = document.getElementById('ft-panel-output');
+  var ftNextEl = document.getElementById('ft-panel-next');
+  var ftHotspots = document.querySelectorAll('.ft-hotspot');
+
+  function activateFtHotspot(el){
+    ftHotspots.forEach(function(h){h.classList.remove('active')});
+    if(el){ el.classList.add('active'); }
+  }
+
+  function renderFtStep(key, el){
+    var step = ftData[key];
+    if(!step) return;
+    ftTitleEl.textContent = step.title;
+    ftMetaEl.textContent = step.label;
+    ftLeadEl.textContent = "Short reference view for the selected Fast Track process element.";
+    ftPurposeEl.textContent = step.purpose;
+    ftRationaleEl.textContent = step.rationale;
+    ftInputEl.textContent = step.input;
+    ftOutputEl.textContent = step.output;
+    ftNextEl.textContent = step.next;
+    activateFtHotspot(el);
+  }
+
+  ftHotspots.forEach(function(h){
+    h.addEventListener('click', function(){ renderFtStep(h.getAttribute('data-step'), h); });
+    h.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); renderFtStep(h.getAttribute('data-step'), h); }
+    });
+    h.setAttribute('tabindex','0');
+    h.setAttribute('role','button');
+    var stepId = h.getAttribute('data-step');
+    if(ftData[stepId]){ h.setAttribute('aria-label', ftData[stepId].title); }
+  });
+}
+
+var mdPanel = document.getElementById('md-panel');
+if(mdPanel){
+  var mdTitleEl = document.getElementById('md-panel-title');
+  var mdMetaEl = document.getElementById('md-panel-meta');
+  var mdLeadEl = document.getElementById('md-panel-lead');
+  var mdPurposeEl = document.getElementById('md-panel-purpose');
+  var mdRationaleEl = document.getElementById('md-panel-rationale');
+  var mdInputEl = document.getElementById('md-panel-input');
+  var mdOutputEl = document.getElementById('md-panel-output');
+  var mdNextEl = document.getElementById('md-panel-next');
+  var mdHotspots = document.querySelectorAll('.md-hotspot');
+
+  function activateMdHotspot(el){
+    mdHotspots.forEach(function(h){h.classList.remove('active')});
+    if(el){ el.classList.add('active'); }
+  }
+
+  function renderMdStep(key, el){
+    var step = mdData[key];
+    if(!step) return;
+    mdTitleEl.textContent = step.title;
+    mdMetaEl.textContent = step.label;
+    mdLeadEl.textContent = "Short reference view for the selected Mentoring Delivery process element.";
+    mdPurposeEl.textContent = step.purpose;
+    mdRationaleEl.textContent = step.rationale;
+    mdInputEl.textContent = step.input;
+    mdOutputEl.textContent = step.output;
+    mdNextEl.textContent = step.next;
+    activateMdHotspot(el);
+  }
+
+  mdHotspots.forEach(function(h){
+    h.addEventListener('click', function(){ renderMdStep(h.getAttribute('data-step'), h); });
+    h.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); renderMdStep(h.getAttribute('data-step'), h); }
+    });
+    h.setAttribute('tabindex','0');
+    h.setAttribute('role','button');
+    var stepId = h.getAttribute('data-step');
+    if(mdData[stepId]){ h.setAttribute('aria-label', mdData[stepId].title); }
+  });
+}
+
+</script>
+
+<script>
+(function(){
+  var toastTimer;
+  function showProtectToast(){
+    var t=document.getElementById('protectToast');
+    if(!t){
+      t=document.createElement('div');
+      t.id='protectToast';
+      t.className='protect-toast';
+      t.textContent='Copying is disabled in this shared version.';
+      document.body.appendChild(t);
+    }
+    t.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){t.classList.remove('on')},1800);
+  }
+  function protectedTarget(el){
+    return !el.closest('input, textarea, [contenteditable="true"]');
+  }
+  document.addEventListener('contextmenu', function(e){ if(protectedTarget(e.target)){ e.preventDefault(); showProtectToast(); } });
+  document.addEventListener('copy', function(e){ if(protectedTarget(e.target)){ e.preventDefault(); showProtectToast(); } });
+  document.addEventListener('cut', function(e){ if(protectedTarget(e.target)){ e.preventDefault(); showProtectToast(); } });
+  document.addEventListener('selectstart', function(e){ if(protectedTarget(e.target)){ e.preventDefault(); } });
+  document.addEventListener('dragstart', function(e){ if(protectedTarget(e.target)){ e.preventDefault(); } });
+  document.addEventListener('keydown', function(e){
+    var key=(e.key||'').toLowerCase();
+    var mod=e.ctrlKey||e.metaKey;
+    if(mod && ['c','x','a','s','u','p'].indexOf(key)!==-1){
+      e.preventDefault();
+      showProtectToast();
+    }
+    if(key==='f12'){
+      e.preventDefault();
+      showProtectToast();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
